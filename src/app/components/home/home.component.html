@@ -1,0 +1,559 @@
+
+ <!-- <app-product></app-product>
+
+<app-industries></app-industries> -->
+
+ <!-- <nav class="navbar-custom"  [class.header-hidden]="hideTopHeader">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="#" class="navbar-brand-custom"><i data-lucide="package" style="color:var(--blue)"></i>Bros<span class="dot">IT Solutions</span></a>
+    <div class="d-none d-lg-flex align-items-center gap-2">
+      <a href="#features" class="nav-link-custom ">Product</a>
+      <a href="#industries" class="nav-link-custom ">Industries</a>
+      <a href="#pricing" class="nav-link-custom ">Pricing</a>
+      <a href="#faq" class="nav-link-custom ">Resources</a>
+      <a href="#testimonials" class="nav-link-custom ">Customers</a>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <button class="theme-toggle" aria-label="Toggle dark mode" (click)="toggleTheme()">
+        <i [attr.data-lucide]="theme === 'dark' ? 'sun' : 'moon'" style="width:18px;height:18px"></i>
+      </button>
+      <button class="theme-toggle mobile-menu-btn" aria-label="Open menu" (click)="toggleMobileMenu()">
+        <i data-lucide="menu" style="width:18px;height:18px"></i>
+      </button>
+    </div>
+  </div>
+  <div class="d-lg-none" [style.display]="mobileMenuOpen ? 'block' : 'none'" style="background:var(--bg);border-top:1px solid var(--border);margin-top:14px;">
+    <div class="container py-3 d-flex flex-column gap-2">
+      <a href="#features" class="nav-link-custom" (click)="closeMobileMenu()">Product</a>
+      <a href="#industries" class="nav-link-custom" (click)="closeMobileMenu()">Industries</a>
+      <a href="#pricing" class="nav-link-custom" (click)="closeMobileMenu()">Pricing</a>
+      <a href="#faq" class="nav-link-custom" (click)="closeMobileMenu()">Resources</a>
+      <a href="#testimonials" class="nav-link-custom" (click)="closeMobileMenu()">Customers</a>
+    </div>
+  </div>
+</nav>  -->
+
+<app-hero-slider></app-hero-slider>
+ <a href="#main" class="skip-link">Skip to content</a>
+ <!-- <app-navbar></app-navbar> -->
+
+<main id="main">
+<!-- HERO -->
+<!-- <section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="hero-badge"><span class="stars">★★★★★</span> Trusted by 10,000+ Indian retailers</div>
+        <h1>Complete <span class="hl">POS &amp; Billing</span> Software for Modern Businesses</h1>
+        <p class="lead-custom">Manage billing, inventory, GST, accounts, customers, reports, multiple branches, and cloud operations — from one powerful platform.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#" class="btn-red">Start Free Trial</a>
+          <a href="#" class="btn-blue-outline">Book Demo</a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>10,000+</strong>Active Businesses</div>
+          <div><strong>50+</strong>Cities Covered</div>
+          <div><strong>99.9%</strong>Uptime</div>
+          <div><strong>24×7</strong>Support</div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="dash-wrap">
+          <div class="float-chip c1"><div class="icon-badge" style="background:rgba(16,185,129,.14);color:#10B981;"><i data-lucide="trending-up" style="width:16px;height:16px"></i></div>Sales up 18%</div>
+          <div class="dash-card">
+            <div class="dash-topbar">
+              <div class="dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+              <span style="font-size:.75rem;color:var(--text-3);font-weight:600;">Today's Overview</span>
+            </div>
+            <div class="dash-stat-grid">
+              <div class="dash-stat"><div class="lbl">Today's Sales</div><div class="val">₹1,84,320</div><div class="chg">▲ 12.4%</div></div>
+              <div class="dash-stat"><div class="lbl">Total Orders</div><div class="val">438</div><div class="chg">▲ 8.1%</div></div>
+              <div class="dash-stat"><div class="lbl">Inventory</div><div class="val">6,210</div><div class="chg" style="color:var(--text-3);">SKUs live</div></div>
+              <div class="dash-stat"><div class="lbl">Low Stock</div><div class="val" style="color:var(--red);">17</div><div class="chg" style="color:var(--red);">Needs reorder</div></div>
+            </div>
+            <div class="dash-chart-area"><div id="heroChart"></div></div>
+            <div style="font-size:.72rem;color:var(--text-3);font-weight:600;margin-bottom:8px;">TOP PRODUCTS</div>
+            <div class="d-flex justify-content-between" style="font-size:.8rem;"><span>Basmati Rice 5kg</span><strong>₹42,100</strong></div>
+          </div>
+          <div class="float-chip c2"><div class="icon-badge" style="background:rgba(37,99,235,.14);color:var(--blue);"><i data-lucide="cloud" style="width:16px;height:16px"></i></div>Synced across branches</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- About -->
+<app-about></app-about>
+
+<!-- <section id="about" class="about-section py-5">
+  </section> -->
+<!-- TRUSTED BY -->
+<section class="trusted-strip">
+  <div class="container">
+    <p class="text-center text-muted-2 fw-semibold mb-4" style="font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;">Trusted across every kind of retail business</p>
+    <div class="row g-3">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" *ngFor="let ind of industries">
+        <div class="industry-chip"><div class="ic"><i [attr.data-lucide]="ind[0]" style="width:20px;height:20px"></i></div><span>{{ ind[1] }}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Why BillEase</span>
+      <h2 class="section-title">Built for the way Indian retail actually works</h2>
+      <p class="section-sub mx-auto">Everything you need to run billing, stock and accounts smoothly — with none of the complexity.</p>
+    </div>
+    <div class="row g-4 align-items-start" >
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" [attr.data-aos-delay]="(i % 3) * 80" *ngFor="let w of whyItems; let i = index">
+        <div class="feature-card">
+          <i data-lucide="check-circle-2" class="check" style="width:18px;height:18px"></i>
+          <div class="fc-icon" [style.background]="w[1] + '1A'" [style.color]="w[1]"><i [attr.data-lucide]="w[0]" style="width:24px;height:24px"></i></div>
+          <h4>{{ w[2] }}</h4>
+          <p>{{ w[3] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES / MODULES -->
+<section class="section" id="features" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Platform</span>
+      <h2 class="section-title">One platform, every module your business needs</h2>
+      <p class="section-sub mx-auto">From daily billing to financial ledgers — organized into clear, connected modules.</p>
+    </div>
+
+    <p class="module-tag" data-aos="fade-up">Core Modules</p>
+    <div class="row g-4 mb-5">
+      <div class="col-md-6" data-aos="fade-up" [attr.data-aos-delay]="(i % 2) * 80" *ngFor="let m of coreModules; let i = index">
+        <div class="module-block">
+          <div class="module-icon"><i [attr.data-lucide]="m[0]" style="width:22px;height:22px"></i></div>
+          <div><h4 style="font-size:1rem;font-weight:700;margin-bottom:6px;">{{ m[1] }}</h4><p style="font-size:.87rem;color:var(--text-2);margin:0;">{{ m[2] }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="module-tag" data-aos="fade-up">Advanced Features</p>
+    <div class="row g-4 mb-5">
+      <div class="col-md-6" data-aos="fade-up" [attr.data-aos-delay]="(i % 2) * 80" *ngFor="let m of advModules; let i = index">
+        <div class="module-block">
+          <div class="module-icon"><i [attr.data-lucide]="m[0]" style="width:22px;height:22px"></i></div>
+          <div><h4 style="font-size:1rem;font-weight:700;margin-bottom:6px;">{{ m[1] }}</h4><p style="font-size:.87rem;color:var(--text-2);margin:0;">{{ m[2] }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="module-tag" data-aos="fade-up">Financial Ledgers</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" [attr.data-aos-delay]="(i % 2) * 80" *ngFor="let m of ledgerModules; let i = index">
+        <div class="module-block">
+          <div class="module-icon"><i [attr.data-lucide]="m[0]" style="width:22px;height:22px"></i></div>
+          <div><h4 style="font-size:1rem;font-weight:700;margin-bottom:6px;">{{ m[1] }}</h4><p style="font-size:.87rem;color:var(--text-2);margin:0;">{{ m[2] }}</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD PREVIEW -->
+<section class="section" id="dashboard">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <span class="eyebrow">Live Dashboard</span>
+        <h2 class="section-title">See your whole business at a glance</h2>
+        <p class="section-sub">Revenue, expenses, best sellers, low stock and branch performance — all updating in real time, from web or mobile.</p>
+        <ul class="list-unstyled mt-4">
+          <li class="d-flex gap-2 mb-3"><i data-lucide="check-circle-2" style="color:#10B981"></i> Multi-branch performance comparison</li>
+          <li class="d-flex gap-2 mb-3"><i data-lucide="check-circle-2" style="color:#10B981"></i> Automatic low-stock &amp; expiry alerts</li>
+          <li class="d-flex gap-2 mb-3"><i data-lucide="check-circle-2" style="color:#10B981"></i> Exportable GST-ready reports</li>
+        </ul>
+        <a href="#" class="btn-red">Explore the Dashboard</a>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="preview-panel">
+          <div class="row g-3 mb-3">
+            <div class="col-6 col-md-3"><div class="mini-card"><div class="lbl">Revenue</div><div class="val">₹12.4L</div></div></div>
+            <div class="col-6 col-md-3"><div class="mini-card"><div class="lbl">Expenses</div><div class="val">₹3.1L</div></div></div>
+            <div class="col-6 col-md-3"><div class="mini-card"><div class="lbl">Branches</div><div class="val">6</div></div></div>
+            <div class="col-6 col-md-3"><div class="mini-card"><div class="lbl">Avg Order</div><div class="val">₹842</div></div></div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-7">
+              <div class="mini-card" style="height:230px;"><div id="revenueChart"></div></div>
+            </div>
+            <div class="col-md-5">
+              <div class="mini-card h-100">
+                <div class="lbl mb-2">Recent Transactions</div>
+                <div class="tx-row"><span>Sharma Textiles</span><span class="badge-soft badge-green">₹8,420</span></div>
+                <div class="tx-row"><span>Ganesh Jewellers</span><span class="badge-soft badge-green">₹64,200</span></div>
+                <div class="tx-row"><span>City Bakery</span><span class="badge-soft badge-amber">Pending</span></div>
+                <div class="tx-row"><span>Ravi Mobiles</span><span class="badge-soft badge-green">₹12,990</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT PAGE -->
+<section class="section" id="features" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);"></section>
+
+<!-- INDUSTRY SOLUTIONS -->
+<app-industries></app-industries>
+
+<!-- CLOUD FEATURES -->
+<section class="section">
+  <div class="container">
+    <div class="cloud-section" data-aos="fade-up">
+      <div class="row align-items-center g-5 position-relative">
+        <div class="col-lg-6">
+          <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Cloud-Powered</span>
+          <h2 class="section-title" style="color:#fff;">Your business, synced everywhere</h2>
+          <p style="color:#D1D5DB;max-width:480px;">Bill from any branch, check reports from your phone, and never worry about losing data again.</p>
+          <div class="row mt-3">
+            <div class="col-sm-6">
+              <div class="cloud-check" *ngFor="let f of cloudCol1"><div class="chk-ic"><i data-lucide="check" style="width:14px;height:14px"></i></div><span style="color:#E5E7EB;font-size:.92rem;">{{ f }}</span></div>
+            </div>
+            <div class="col-sm-6">
+              <div class="cloud-check" *ngFor="let f of cloudCol2"><div class="chk-ic"><i data-lucide="check" style="width:14px;height:14px"></i></div><span style="color:#E5E7EB;font-size:.92rem;">{{ f }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="glass-badge">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-badge" style="background:rgba(37,99,235,.25);color:#93C5FD;"><i data-lucide="smartphone"></i></div>
+              <div><div style="font-weight:700;color:#fff;">Mobile App Access</div><div style="font-size:.8rem;color:#9CA3AF;">iOS &amp; Android — live reports anywhere</div></div>
+            </div>
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-badge" style="background:rgba(16,185,129,.25);color:#6EE7B7;"><i data-lucide="shield-check"></i></div>
+              <div><div style="font-weight:700;color:#fff;">Bank-grade Security</div><div style="font-size:.8rem;color:#9CA3AF;">Encrypted backups, role-based access</div></div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="icon-badge" style="background:rgba(227,6,19,.2);color:#FCA5A5;"><i data-lucide="refresh-cw"></i></div>
+              <div><div style="font-weight:700;color:#fff;">Automatic Updates</div><div style="font-size:.8rem;color:#9CA3AF;">Always on the latest version</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POS DEVICES -->
+<section class="section" id="devices">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Hardware</span>
+      <h2 class="section-title">Works with the hardware you already use</h2>
+      <p class="section-sub mx-auto">Plug-and-play compatibility with all major POS devices.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3" data-aos="fade-up" [attr.data-aos-delay]="(i % 4) * 70" *ngFor="let d of devices; let i = index">
+        <div class="device-card">
+          <div class="device-icon-wrap"><i [attr.data-lucide]="d[0]" style="width:28px;height:28px"></i></div>
+          <h6>{{ d[1] }}</h6>
+          <small>{{ d[2] }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="stats-section" data-aos="zoom-in">
+      <div class="row text-center g-4">
+        <div class="col-6" style="flex:1 1 20%;min-width:140px;" *ngFor="let s of stats">
+          <div class="stat-num">{{ s.display }}</div>
+          <div class="stat-lbl">{{ s.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="customers" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Customers</span>
+      <h2 class="section-title">Loved by retailers across India</h2>
+    </div>
+    <div class="d-flex align-items-center justify-content-center gap-4" data-aos="fade-up">
+      <button class="testi-nav-btn d-none d-md-flex" aria-label="Previous testimonial" (click)="prevTesti()"><i data-lucide="chevron-left"></i></button>
+      <div style="flex:1;max-width:760px;">
+        <div class="testi-card">
+          <img [src]="currentTesti.img" [alt]="currentTesti.name + ' avatar'" class="testi-avatar">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"{{ currentTesti.text }}"</p>
+          <div style="font-weight:700;">{{ currentTesti.name }}</div>
+          <div style="font-size:.85rem;color:var(--text-3);">{{ currentTesti.role }}</div>
+        </div>
+      </div>
+      <button class="testi-nav-btn d-none d-md-flex" aria-label="Next testimonial" (click)="nextTesti()"><i data-lucide="chevron-right"></i></button>
+    </div>
+    <div class="testi-dots">
+      <button *ngFor="let t of testimonials; let i = index" [class.active]="i === testiIndex" [attr.aria-label]="'Go to testimonial ' + (i + 1)" (click)="goToTesti(i)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<!-- <section class="section" id="pricing">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-title">Simple pricing that grows with you</h2>
+      <p class="section-sub mx-auto">No hidden fees. Cancel anytime.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" [attr.data-aos-delay]="i * 100" *ngFor="let p of plans; let i = index">
+        <div class="price-card" [class.featured]="p.featured">
+          <span class="popular-tag" *ngIf="p.featured">Most Popular</span>
+          <div class="module-tag">{{ p.name }}</div>
+          <p style="font-size:.85rem;color:var(--text-2);min-height:40px;">{{ p.desc }}</p>
+          <div class="price-amt">{{ p.price }}<span>{{ p.per }}</span></div>
+          <a href="#" class="d-block text-center mb-3" [class.btn-red]="p.featured" [class.btn-navy-outline]="!p.featured">{{ p.cta }}</a>
+          <div>
+            <div class="price-feat" *ngFor="let f of p.feats"><i data-lucide="check" style="width:16px;height:16px"></i><span>{{ f }}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Questions, answered</h2>
+    </div>
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <button class="faq-cat-btn" *ngFor="let c of faqCats" [class.active]="c === activeCat" (click)="setFaqCat(c)">{{ c }}</button>
+    </div>
+    <div class="accordion mx-auto" style="max-width:760px;">
+      <div class="accordion-item" *ngFor="let item of faqData[activeCat]; let i = index">
+        <h3 class="accordion-header">
+          <button class="accordion-button" [class.collapsed]="openFaqIndex !== i" type="button" (click)="toggleFaq(i)">{{ item[0] }}</button>
+        </h3>
+        <div class="accordion-collapse collapse" [class.show]="openFaqIndex === i">
+          <div class="accordion-body">{{ item[1] }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section">
+  <div class="container">
+    <div class="final-cta" data-aos="zoom-in">
+      <h2>Ready to grow your business?</h2>
+      <p style="max-width:480px;margin:0 auto 28px;opacity:.95;">Join 10,000+ retailers already billing smarter with BillEase POS.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="#" class="btn-navy-outline" style="background:#fff;border-color:#fff;color:var(--red);">Start Free Trial</a>
+        <a href="#" class="btn-navy-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">Book Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-6">
+        <a href="#" class="navbar-brand-custom" style="color:#fff!important;"><i data-lucide="receipt" style="color:var(--red)"></i>BillEase<span class="dot">POS</span></a>
+        <p style="color:#9CA3AF;font-size:.85rem;margin:14px 0 18px;">Complete POS and retail billing software for modern Indian businesses.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="footer-social"><i data-lucide="facebook" style="width:16px;height:16px"></i></a>
+          <a href="#" class="footer-social"><i data-lucide="instagram" style="width:16px;height:16px"></i></a>
+          <a href="#" class="footer-social"><i data-lucide="linkedin" style="width:16px;height:16px"></i></a>
+          <a href="#" class="footer-social"><i data-lucide="youtube" style="width:16px;height:16px"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6"><h6>Company</h6><a href="#">About Us</a><a href="#">Careers</a><a href="#">Blog</a><a href="#">Contact</a></div>
+      <div class="col-lg-2 col-6"><h6>Products</h6><a href="#">Billing</a><a href="#">Inventory</a><a href="#">Accounting</a><a href="#">Mobile App</a></div>
+      <div class="col-lg-2 col-6"><h6>Solutions</h6><a href="#">Retail Store</a><a href="#">Restaurant POS</a><a href="#">Jewellery Shop</a><a href="#">Supermarket</a></div>
+      <div class="col-lg-3 col-6">
+        <h6>Contact</h6>
+        <a href="#"><i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 98765 43210</a>
+        <a href="#"><i data-lucide="mail" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>hello&#64;billeasepos.in</a>
+        <a href="#"><i data-lucide="map-pin" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>Chennai, Tamil Nadu, India</a>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+      <span>© 2026 BillEase POS. All rights reserved.</span>
+      <div class="d-flex gap-3"><a href="#" style="margin:0;">Privacy Policy</a><a href="#" style="margin:0;">Terms of Service</a></div>
+    </div>
+  </div>
+</footer> -->
+
+<!-- FOOTER -->
+<footer>
+  <footer>
+  <div class="container">
+    <div class="row g-4  align-items-start">
+  <div class="col-lg-4 col-md-6">
+
+  <a href="/" class="footer-brand">
+
+    <img
+      src="assets/img/bros-logo.jpg"
+      alt="Bros IT Solutions"
+      class="footer-logo">
+
+    <div class="footer-brand-text">
+
+      <span class="brand-black">Bros</span>
+
+      <span class="brand-red">IT Solutions</span>
+
+    </div>
+
+  </a>
+
+  <p class="footer-desc">
+    Complete POS and retail billing software for modern Indian businesses.
+  </p>
+
+  <div class="d-flex gap-3 mt-4">
+
+    <a href="#" class="footer-social">
+      <i class="ri-facebook-fill"></i>
+    </a>
+
+    <a href="#" class="footer-social">
+      <i class="ri-instagram-line"></i>
+    </a>
+
+    <a href="#" class="footer-social">
+      <i class="ri-linkedin-fill"></i>
+    </a>
+
+    <a href="#" class="footer-social">
+      <i class="ri-youtube-fill"></i>
+    </a>
+
+  </div>
+
+</div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Company</h6>
+
+        <a href="#">About Us</a>
+
+        <a href="#">Careers</a>
+
+        <a href="#">Blog</a>
+
+        <!-- <a href="#">Contact</a> -->
+
+      </div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Products</h6>
+
+        <a href="#">Billing</a>
+
+        <a href="#">Inventory</a>
+
+        <a href="#">Accounting</a>
+
+        <a href="#">Mobile App</a>
+
+      </div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Solutions</h6>
+
+        <a routerLink="/retail-store">Retail Store</a>
+
+        <a routerLink="/restaurant-pos">Restaurant POS</a>
+
+        <a routerLink="/jewellery-shop">Jewellery Shop</a>
+
+        <a routerLink="/supermarket">Supermarket</a>
+
+      </div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Contact</h6>
+
+        <a href="#">
+          <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i> +91 93636 17197</a>
+        <a href="#">
+          <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 96001 61940</a>
+        <a href="#">
+          <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 99403 01367</a>
+
+        <a href="#">
+          <i data-lucide="mail" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>sales&#64;brositsolutions.com</a>
+        <a href="#">
+          <i data-lucide="mail" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>info&#64;brositsolutions.com</a>
+
+        <a href="#">
+          <i data-lucide="map-pin" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>
+          #65, Block No:2, Plot No: B, Ponnan Kinaru St, Villivakkam , Chennai - 600049
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+
+      <span>© 2026 Bros IT Solutions. All rights reserved.</span>
+
+      <div class="d-flex gap-3">
+
+        <a href="#" style="margin:0;">Privacy Policy</a>
+
+        <a href="#" style="margin:0;">Terms of Service</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Map Location -->
+   <section class="company-map">
+  <div class="container-fluid p-0">
+    <iframe
+      src="https://www.google.com/maps?q=BROS%20IT%20SOLUTIONS%2C%20First%20Floor%20Flat%20No.23%2C%20Ponnan%20Kinaru%20Street%2C%20Villivakkam%2C%20Chennai%20600049&output=embed"
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+</footer>

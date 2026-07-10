@@ -1,0 +1,61 @@
+<section class="section industries-section" id="industries">
+  <!-- CSS Background Blobs and Shapes -->
+  <div class="bg-glow-blob blob-1"></div>
+  <div class="bg-glow-blob blob-2"></div>
+  <div class="bg-glow-blob blob-3"></div>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <div class="container position-relative">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <span class="eyebrow">
+        Industry Solutions
+      </span>
+      <h2 class="section-title">
+        Tailored for your kind of business
+      </h2>
+      <p class="section-sub mx-auto">
+        Purpose-built workflows for the industries we know best.
+      </p>
+    </div>
+
+    <!-- Swiper Navigation Wrapper -->
+    <div class="swiper-nav-wrapper position-relative px-md-5">
+      
+      <!-- Custom Left/Right Navigation Arrows -->
+      <button class="swiper-nav-btn prev-btn" (click)="slidePrev()" aria-label="Previous slide">
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+      <button class="swiper-nav-btn next-btn" (click)="slideNext()" aria-label="Next slide">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+
+      <!-- Swiper Container -->
+      <swiper-container #swiperRef init="false" class="industries-swiper">
+        <swiper-slide *ngFor="let item of solutions" class="swiper-slide-custom" mousewheel="true">
+          <div class="industry-card" 
+               [style.--card-theme-color]="item.color"
+               [style.--card-theme-light]="item.lightColor"
+               [style.--card-theme-glow]="item.glow"
+               [style.--card-theme-glow-sm]="item.glowSm">
+            
+            <div class="card-icon-wrap">
+              <i [class]="item.icon"></i>
+            </div>
+            
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-description">{{ item.description }}</p>
+            
+            <a [routerLink]="item.route" class="card-link">
+              Learn More <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+
+    </div>
+
+  </div>
+</section>

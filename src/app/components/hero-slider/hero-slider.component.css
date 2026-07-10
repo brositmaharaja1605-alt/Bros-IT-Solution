@@ -1,0 +1,174 @@
+/* =====================================
+   HERO WRAPPER
+===================================== */
+
+.hero-wrapper{
+    width:100%;
+    margin-top:70px;
+    overflow:hidden;
+    background:#fff;
+}
+
+/* =====================================
+   SLIDER
+===================================== */
+
+.slider{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    aspect-ratio:1672 / 941;
+}
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.banner{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.nav-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,.35);
+    color:#fff;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+    z-index:100;
+}
+
+.nav-btn:hover{
+    background:#2563eb;
+}
+
+.nav-btn i{
+    font-size:28px;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+/* =====================================
+   LARGE MONITOR
+===================================== */
+
+@media (min-width:1600px){
+
+.hero-wrapper{
+    margin-top:72px;
+}
+
+.slider{
+    aspect-ratio:1672 / 941;
+}
+
+}
+
+/* =====================================
+   LAPTOP
+===================================== */
+
+@media (max-width:1200px){
+
+.hero-wrapper{
+    margin-top:70px;
+}
+
+.slider{
+    aspect-ratio:1672 / 941;
+}
+
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width:992px){
+
+.hero-wrapper{
+    margin-top:68px;
+}
+
+.slider{
+    aspect-ratio:16/10;
+}
+
+.nav-btn{
+    width:46px;
+    height:46px;
+}
+
+.nav-btn i{
+    font-size:24px;
+}
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width:768px){
+
+.hero-wrapper{
+    margin-top:64px;
+}
+
+.slider{
+    aspect-ratio:9/16;
+}
+
+.banner{
+    object-fit:cover;
+    object-position:center top;
+}
+
+.nav-btn{
+    display:none;
+}
+
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width:480px){
+
+.hero-wrapper{
+    margin-top:62px;
+}
+
+.slider{
+    aspect-ratio:9/16;
+}
+
+.banner{
+    object-fit:cover;
+    object-position:center top;
+}
+
+}

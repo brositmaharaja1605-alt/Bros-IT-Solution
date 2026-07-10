@@ -1,0 +1,250 @@
+/* Section Container */
+.industries-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  padding: 100px 0;
+  z-index: 1;
+}
+
+/* Gradient Blobs in the Background */
+.bg-glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+}
+.blob-1 {
+  width: 450px;
+  height: 450px;
+  background: var(--blue);
+  top: -10%;
+  left: -5%;
+  animation: floatBlob 12s infinite alternate;
+}
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--red);
+  bottom: -5%;
+  right: -5%;
+  animation: floatBlob 12s infinite alternate-reverse;
+}
+.blob-3 {
+  width: 350px;
+  height: 350px;
+  background: #a855f7;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatBlob 12s infinite alternate;
+}
+
+@keyframes floatBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.1); }
+  100% { transform: translate(-40px, -60px) scale(0.9); }
+}
+
+/* Floating Shapes in the Background */
+.bg-shape {
+  position: absolute;
+  opacity: 0.02;
+  z-index: -1;
+  pointer-events: none;
+  border: 2px solid var(--text-1);
+}
+.shape-1 {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  top: 15%;
+  right: 12%;
+  animation: rotateShape 12s infinite linear;
+}
+.shape-2 {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 8%;
+  animation: floatShape 8s infinite ease-in-out;
+}
+
+@keyframes rotateShape {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes floatShape {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+/* Swiper Navigation Wrapper */
+.swiper-nav-wrapper {
+  padding: 10px 50px 30px;
+}
+
+/* Custom Navigation Buttons */
+.swiper-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swiper-nav-btn:hover {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Swiper Element */
+.industries-swiper {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.swiper-slide-custom {
+  height: auto;
+  display: flex;
+}
+
+/* Premium Industry Cards */
+.industry-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px 24px;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+}
+
+.industry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--card-theme-color) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.industry-card:hover::before {
+  opacity: 0.02;
+}
+
+.industry-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--card-theme-color);
+  box-shadow: 0 20px 40px var(--card-theme-glow);
+}
+
+/* Card Icon Box */
+.card-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--card-theme-color), var(--card-theme-light));
+  margin-bottom: 24px;
+  box-shadow: 0 8px 16px var(--card-theme-glow-sm);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-card:hover .card-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* Card Link */
+.card-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--card-theme-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.card-link i {
+  transition: transform 0.2s ease;
+}
+
+.industry-card:hover .card-link {
+  color: var(--card-theme-light);
+}
+
+.industry-card:hover .card-link i {
+  transform: translateX(6px);
+}
+
+/* Responsive adjustments */
+@media(max-width: 991px) {
+  .industries-section {
+    padding: 70px 0;
+  }
+  .swiper-nav-wrapper {
+    padding: 10px 20px 20px;
+  }
+  .swiper-nav-btn {
+    display: none; /* Swipe works, buttons hide on mobile for cleaner look */
+  }
+}

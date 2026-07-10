@@ -1,0 +1,23 @@
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-title">Simple pricing that grows with you</h2>
+      <p class="section-sub mx-auto">No hidden fees. Cancel anytime.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" [attr.data-aos-delay]="i * 100" *ngFor="let p of plans; let i = index">
+        <div class="price-card" [class.featured]="p.featured">
+          <span class="popular-tag" *ngIf="p.featured">Most Popular</span>
+          <div class="module-tag">{{ p.name }}</div>
+          <p style="font-size:.85rem;color:var(--text-2);min-height:40px;">{{ p.desc }}</p>
+          <div class="price-amt">{{ p.price }}<span>{{ p.per }}</span></div>
+          <a href="#" class="d-block text-center mb-3" [class.btn-red]="p.featured" [class.btn-navy-outline]="!p.featured">{{ p.cta }}</a>
+          <div>
+            <div class="price-feat" *ngFor="let f of p.feats"><i data-lucide="check" style="width:16px;height:16px"></i><span>{{ f }}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
+
+@Component({
+  selector: 'app-contact',
+  standalone: true,
+  imports: [
+    CommonModule,
+    NavbarComponent
+  ],
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
+})
+export class ContactComponent {
+
+  animateArrow = false;
+
+  submitAnimation() {
+
+    this.animateArrow = true;
+
+    setTimeout(() => {
+
+      this.animateArrow = false;
+
+    }, 700);
+
+  }
+
+}

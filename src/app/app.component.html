@@ -1,0 +1,58 @@
+<!-- <a href="#main" class="skip-link">Skip to content</a> -->
+
+<!-- NAVBAR -->
+
+
+<app-navbar></app-navbar>
+
+
+<router-outlet></router-outlet>
+<app-whatsapp-popup></app-whatsapp-popup>
+
+<!-- <button class="whatsapp-btn button1">
+<img class="whatsapp" src="../assets/img/w.png" alt="Whatsapp">
+</button> -->
+
+
+<button class="scroll-top" (click)="scrollToTop()" [class.show]="showButton">
+<i class="ri-arrow-up-wide-line"></i>
+
+</button>
+
+
+
+<!-- <div class="container mt-5">
+  <button class="btn btn-primary">
+    Bootstrap Working
+  </button>
+</div> -->
+ <!-- <nav class="navbar-custom"  [class.header-hidden]="hideTopHeader">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="#" class="navbar-brand-custom"><i data-lucide="package" style="color:var(--blue)"></i>Bros<span class="dot">IT Solutions</span></a>
+    <div class="d-none d-lg-flex align-items-center gap-2">
+      <a href="#features" class="nav-link-custom ">Product</a>
+      <a href="#industries" class="nav-link-custom ">Industries</a>
+      <a href="#pricing" class="nav-link-custom ">Pricing</a>
+      <a href="#faq" class="nav-link-custom ">Resources</a>
+      <a href="#testimonials" class="nav-link-custom ">Customers</a>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <button class="theme-toggle" aria-label="Toggle dark mode" (click)="toggleTheme()">
+        <i [attr.data-lucide]="theme === 'dark' ? 'sun' : 'moon'" style="width:18px;height:18px"></i>
+      </button>
+      <button class="theme-toggle mobile-menu-btn" aria-label="Open menu" (click)="toggleMobileMenu()">
+        <i data-lucide="menu" style="width:18px;height:18px"></i>
+      </button>
+    </div>
+  </div>
+  <div class="d-lg-none" [style.display]="mobileMenuOpen ? 'block' : 'none'" style="background:var(--bg);border-top:1px solid var(--border);margin-top:14px;">
+    <div class="container py-3 d-flex flex-column gap-2">
+      <a href="#features" class="nav-link-custom" (click)="closeMobileMenu()">Product</a>
+      <a href="#industries" class="nav-link-custom" (click)="closeMobileMenu()">Industries</a>
+      <a href="#pricing" class="nav-link-custom" (click)="closeMobileMenu()">Pricing</a>
+      <a href="#faq" class="nav-link-custom" (click)="closeMobileMenu()">Resources</a>
+      <a href="#testimonials" class="nav-link-custom" (click)="closeMobileMenu()">Customers</a>
+    </div>
+  </div>
+</nav> -->
+
