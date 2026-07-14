@@ -89,7 +89,7 @@
   <!-- <section id="about" class="about-section py-5">
   </section> -->
   <!-- TRUSTED BY -->
-  <section class="trusted-strip">
+  <!-- <section class="trusted-strip">
     <div class="container">
       <p class="text-center text-muted-2 fw-semibold mb-4"
         style="font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;">Trusted across every kind of retail
@@ -103,7 +103,40 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+  <section class="trusted-strip py-5">
+  <div class="container">
+
+    <p class="text-center text-muted-2 fw-semibold mb-5 section-title">
+      Trusted across every kind of retail business
+    </p>
+
+    <div class="row g-4">
+
+      <div
+        class="col-6 col-sm-4 col-md-3 col-lg-2"
+        data-aos="fade-up"
+        *ngFor="let ind of industries">
+
+        <div class="industry-chip">
+
+           <div class="ic">
+            <i
+              [attr.data-lucide]="ind[0]"
+              class="industry-icon"
+              style="width:22px;height:22px">
+            </i>
+          </div> 
+
+          <span>{{ ind[1] }}</span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- WHY CHOOSE US -->
   <section class="section" id="why">
