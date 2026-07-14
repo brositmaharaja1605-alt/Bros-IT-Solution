@@ -154,40 +154,40 @@ export class IndustriesComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const swiperEl: any = this.swiper.nativeElement;
-Object.assign(swiperEl, {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  loop: true,
-  speed: 800,
-  grabCursor: true,
-
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
-  },
-
-  /* ADD THIS */
-  mousewheel: {
-    forceToAxis: true,
-    releaseOnEdges: false,
-    sensitivity: 1
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 16
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 24
-    },
-    1200: {
+    Object.assign(swiperEl, {
       slidesPerView: 4,
-      spaceBetween: 30
-    }
-  }
-});
+      spaceBetween: 30,
+      loop: true,
+      speed: 900,
+      grabCursor: true,
+
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false
+      },
+
+      /* ADD THIS */
+      mousewheel: {
+        forceToAxis: true,
+        releaseOnEdges: false,
+        sensitivity: 1
+      },
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 16
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 30
+        }
+      }
+    });
 
     // Initialize Swiper Web Component
     swiperEl.initialize();
@@ -198,36 +198,36 @@ Object.assign(swiperEl, {
         swiperEl.swiper.autoplay.stop();
       }
     });
-// MouseEvent
-   swiperEl.addEventListener(
-  'wheel',
-  (event: WheelEvent) => {
+    // MouseEvent
+    swiperEl.addEventListener(
+      'wheel',
+      (event: WheelEvent) => {
 
-    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
 
-      event.preventDefault();
+          event.preventDefault();
 
-      const count = Math.ceil(Math.abs(event.deltaX) / 40);
+          const count = Math.ceil(Math.abs(event.deltaX) / 40);
 
-      if (event.deltaX > 0) {
+          if (event.deltaX > 0) {
 
-        for (let i = 0; i < count; i++) {
-          swiperEl.swiper.slideNext(250);
+            for (let i = 0; i < count; i++) {
+              swiperEl.swiper.slideNext(250);
+            }
+
+          } else {
+
+            for (let i = 0; i < count; i++) {
+              swiperEl.swiper.slidePrev(250);
+            }
+
+          }
+
         }
 
-      } else {
-
-        for (let i = 0; i < count; i++) {
-          swiperEl.swiper.slidePrev(250);
-        }
-
-      }
-
-    }
-
-  },
-  { passive: false }
-);
+      },
+      { passive: false }
+    );
     swiperEl.addEventListener('mouseleave', () => {
       if (swiperEl.swiper && swiperEl.swiper.autoplay) {
         swiperEl.swiper.autoplay.start();

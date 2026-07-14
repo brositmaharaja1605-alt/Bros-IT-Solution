@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -18,8 +20,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   mobileMenuOpen = false;
   productsDropdownOpen = false;
   private routerSub?: Subscription;
+  selectedProduct = 0;
 
-  constructor(private router: Router) {}
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
@@ -44,7 +51,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       title: 'Billing & POS',
       desc: 'Superfast retail billing screen with barcode support.',
       icon: 'ri-receipt-line',
-      color: '#2563eb',
+      color: '#f8ef3c',
       bgClass: 'bg-soft-blue',
       tabIndex: 0
     },
@@ -75,7 +82,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     {
       title: 'Advanced Analytics',
       desc: 'Deep business insights and visual sales performance dashboards.',
-      icon: 'ri-bar-chart-3-line',
+      icon: 'ri-archive-line',
       color: '#06b6d4',
       bgClass: 'bg-soft-cyan',
       tabIndex: 1
@@ -92,27 +99,31 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-  this.theme = (localStorage.getItem('billease-theme') as 'light' | 'dark') || 'light';
+    this.theme = (localStorage.getItem('billease-theme') as 'light' | 'dark') || 'light';
 
-  // Apply saved theme to every page
-  document.documentElement.setAttribute('data-theme', this.theme);
+    // Apply saved theme to every page
+    document.documentElement.setAttribute('data-theme', this.theme);
 
-  if (this.theme === 'dark') {
-    document.body.classList.add('dark');
-  } else {
-    document.body.classList.remove('dark');
-  }
-
-  this.routerSub = this.router.events.subscribe(event => {
-    if (event instanceof NavigationEnd) {
-      this.updateActiveLink();
+    if (this.theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
     }
-  });
 
-  // Run initial update
-  this.updateActiveLink();
+    this.routerSub = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.updateActiveLink();
+      }
+    });
 
-}
+    // Run initial update
+    this.updateActiveLink();
+
+    this.route.queryParams.subscribe(params => {
+      this.selectedProduct = Number(params['tab'] ?? 0);
+    });
+
+  }
 
   ngOnDestroy() {
     if (this.routerSub) {
@@ -123,12 +134,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled = window.scrollY > 80;
-    
+
     // Dynamically update active section based on scroll position on home page
     if (this.router.url.split('#')[0] === '/' || this.router.url === '') {
       const sections = ['about', 'features', 'industries', 'customers'];
       let currentSection = '';
-      
+
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -140,7 +151,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
           }
         }
       }
-      
+
       if (currentSection) {
         this.activeFragment = currentSection;
       } else if (window.scrollY < 100) {
@@ -150,41 +161,41 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   navigateToSection(sectionId: string, event: Event) {
-  event.preventDefault();
-  this.closeMobileMenu();
+    event.preventDefault();
+    this.closeMobileMenu();
 
-  if (this.router.url === '/' || this.router.url.startsWith('/#')) {
+    if (this.router.url === '/' || this.router.url.startsWith('/#')) {
 
-    const element = document.getElementById(sectionId);
+      const element = document.getElementById(sectionId);
 
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        this.activeFragment = sectionId;
+      }
+
+    } else {
+
+      this.router.navigate(['/']).then(() => {
+
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            this.activeFragment = sectionId;
+          }
+        }, 500);
+
       });
-      this.activeFragment = sectionId;
+
     }
-
-  } else {
-
-    this.router.navigate(['/']).then(() => {
-
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          this.activeFragment = sectionId;
-        }
-      }, 500);
-
-    });
-
   }
-}
 
   updateActiveLink() {
     const url = this.router.url;
@@ -222,7 +233,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   toggleTheme() {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
     localStorage.setItem('billease-theme', this.theme);
-    
+
     // Toggle class on body (for light/dark theme styles in global scss)
     if (this.theme === 'dark') {
       document.body.classList.add('dark');
