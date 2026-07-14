@@ -64,26 +64,6 @@
    BRAND
 ========================================================== */
 
-.navbar-brand-custom{
-
-    display:flex;
-
-    align-items:center;
-
-
-    text-decoration:none;
-
-    margin:0;
-
-    padding:0;
-
-    flex-shrink:0;
-
-    margin:0 !important;
-    padding:0 !important;
-    gap:4px;
-}
-
 
 /* ==========================================================
    LOGO
@@ -328,6 +308,31 @@
 
 }
 
+.mobile-accordion-header{
+    color:#fff;
+}
+
+.mobile-accordion-header span{
+    color:#fff;
+    font-weight:600;
+}
+
+.mobile-accordion-header i{
+    color:#fff;
+}
+
+.mobile-accordion-header.active-link{
+    background:rgba(255,255,255,.18);
+    border-radius:12px;
+}
+
+.mobile-accordion-header.active-link span,
+.mobile-accordion-header.active-link i{
+    color:#fff !important;
+}
+
+
+
 /* ==========================================================
    MOBILE
 ========================================================== */
@@ -478,45 +483,56 @@
    MOBILE MENU
 ========================================================== */
 
-.mobile-nav{
-
+/* .mobile-nav{
     position:fixed;
-
     top:64px;
-
-    left:0;
-
-    width:100%;
-
+    right:0;
+    width:75%;
     background:#ffffff;
-
     display:flex;
-
     flex-direction:column;
-
     padding:18px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    transform:translateY(-120%);
-
+    transform:translateY(-120%); 
     transition:.35s;
-
     z-index:9998;
+    border-radius: 9px;
+} */
 
+.mobile-nav{
+    position: fixed;
+    top: 64px;
+    right: 0;
+    width: 75%;
+    height: calc(100vh - 64px);
+    color: white;
+    background: linear-gradient(
+        160deg,
+        #2563eb 0%,
+        #4f46e5 45%,
+        #7c3aed 100%
+    );
+
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+
+    transform: translateY(-120%);
+    transition: .35s ease;
+
+    z-index: 9998;
+    border-radius: 0 0 0 20px;
+    box-shadow: -15px 0 40px rgba(79,70,229,.35);
 }
 
 .mobile-nav.show{
-
-    transform:translateY(0);
-
+    transform:translateY(0);     
 }
 
 .mobile-nav a{
 
     padding:14px 16px;
 
-    color:#111827;
+    color:#fefeff;
 
     text-decoration:none;
 
@@ -562,7 +578,7 @@ html[data-theme="dark"] .nav-links a{
 
 html[data-theme="dark"] .nav-links a:hover{
 
-    color:#60a5fa;
+    color:#ffffff;
 
 }
 
@@ -662,5 +678,41 @@ html[data-theme="dark"] .mobile-nav a:hover{
     align-items:center;
 
     gap:0;
+
+}
+
+/* ==========================================================
+   MOBILE ACCORDION (Products)
+========================================================== */
+
+.mobile-accordion-header{
+    cursor:pointer;
+}
+
+.mobile-accordion-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.mobile-accordion-body.expanded{
+    max-height:600px;   /* products list full ah kaanumaLavu ku periya value */
+}
+
+.accordion-arrow{
+    transition:transform .3s ease;
+}
+
+.accordion-arrow.rotated{
+    transform:rotate(180deg);
+}
+
+@media (max-width:992px){
+
+    .mobile-nav .active-link{
+        color:#fff !important;
+        background:rgba(255,255,255,.18);
+        border-radius:10px;
+    }
 
 }
