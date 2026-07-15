@@ -9,3 +9,7 @@
 footer .container{
   max-width: 1350px !important;
 }
+.mini-card {
+  overflow: hidden;
+  position: relative;
+}
