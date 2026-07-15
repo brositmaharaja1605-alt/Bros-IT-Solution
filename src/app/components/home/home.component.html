@@ -89,7 +89,7 @@
   <!-- <section id="about" class="about-section py-5">
   </section> -->
   <!-- TRUSTED BY -->
-  <section class="trusted-strip">
+  <!-- <section class="trusted-strip">
     <div class="container">
       <p class="text-center text-muted-2 fw-semibold mb-4"
         style="font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;">Trusted across every kind of retail
@@ -103,10 +103,88 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+  <section class="trusted-strip py-5">
+  <div class="container">
+
+    <p class="text-center text-muted-2 fw-semibold mb-5 section-title">
+      Trusted across every kind of retail business
+    </p>
+
+    <div class="row g-4">
+
+      <div
+        class="col-6 col-sm-4 col-md-3 col-lg-2"
+        data-aos="fade-up"
+        *ngFor="let ind of industries">
+
+        <div class="industry-chip">
+
+           <div class="ic">
+            <i
+              [attr.data-lucide]="ind[0]"
+              class="industry-icon"
+              style="width:22px;height:22px">
+            </i>
+          </div> 
+
+          <span>{{ ind[1] }}</span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- WHY CHOOSE US -->
-  <section class="section" id="why">
+   <section class="section py-5" id="why">
+  <div class="container">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Why BillEase</span>
+      <h2 class="section-title">Built for the way Indian retail actually works</h2>
+      <p class="section-sub mx-auto">
+        Everything you need to run billing, stock and accounts smoothly — with none of the complexity.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-12 col-sm-6 col-lg-4"
+           *ngFor="let w of whyItems; let i=index"
+           data-aos="zoom-in"
+           [attr.data-aos-delay]="i*100">
+
+        <div class="feature-card h-100">
+
+          <i data-lucide="check-circle-2"
+             class="check"
+             style="width:18px;height:18px"></i>
+
+          <div class="fc-icon floating-icon"
+               [style.background]="w[1] + '1A'"
+               [style.color]="w[1]">
+
+            <i [attr.data-lucide]="w[0]"
+               style="width:24px;height:24px"></i>
+
+          </div>
+
+          <h4>{{w[2]}}</h4>
+
+          <p>{{w[3]}}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <!-- <section class="section" id="why">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
         <span class="eyebrow">Why BillEase</span>
@@ -127,7 +205,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- FEATURES / MODULES -->
   <section class="section" id="features"
