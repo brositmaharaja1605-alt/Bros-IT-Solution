@@ -50,6 +50,29 @@ export class IndustriesComponent implements AfterViewInit {
       description: 'Purity, hallmark and making-charge aware billing.',
       route: '/jewellery-shop'
     },
+    // Chit Fund
+    {
+      color: '#16a34a', // Green
+      lightColor: '#4ade80',
+      glow: 'rgba(22, 163, 74, 0.15)',
+      glowSm: 'rgba(22, 163, 74, 0.25)',
+      icon: 'ri-coins-line',
+      title: 'Chit Fund',
+      description: 'Manage members, auctions, installments and payment collections.',
+      route: '/chit-fund'
+    },
+
+    // Pawn Broking
+    {
+      color: '#ca8a04', // Gold
+      lightColor: '#facc15',
+      glow: 'rgba(202, 138, 4, 0.15)',
+      glowSm: 'rgba(202, 138, 4, 0.25)',
+      icon: 'ri-safe-2-line',
+      title: 'Pawn Broking',
+      description: 'Handle pledged items, loan accounts, interest and redemption tracking.',
+      route: '/pawn-broking'
+    },
     {
       color: '#f97316', // Orange
       lightColor: '#fb923c',
@@ -96,7 +119,7 @@ export class IndustriesComponent implements AfterViewInit {
       glow: 'rgba(139, 92, 246, 0.15)',
       glowSm: 'rgba(139, 92, 246, 0.25)',
       icon: 'ri-cpu-line',
-      title: 'Electronics',
+      title: 'Electrical & Electronics',
       description: 'Serial number and warranty tracking built in.',
       route: '/electronics'
     },
@@ -149,7 +172,79 @@ export class IndustriesComponent implements AfterViewInit {
       title: 'Hardware',
       description: 'Bulk unit conversions and supplier-linked stock.',
       route: '/hardware'
-    }
+    },
+
+    // ERP System
+    {
+      color: '#7c3aed', // Purple
+      lightColor: '#a78bfa',
+      glow: 'rgba(124, 58, 237, 0.15)',
+      glowSm: 'rgba(124, 58, 237, 0.25)',
+      icon: 'ri-dashboard-3-line',
+      title: 'ERP System',
+      description: 'Complete business management with finance, HR, CRM and inventory.',
+      route: '/erp-system'
+    },
+
+    // IoT Solutions
+    {
+      color: '#0891b2', // Sky Blue
+      lightColor: '#22d3ee',
+      glow: 'rgba(8, 145, 178, 0.15)',
+      glowSm: 'rgba(8, 145, 178, 0.25)',
+      icon: 'ri-router-line',
+      title: 'IoT Solutions',
+      description: 'Monitor and automate connected devices with real-time insights.',
+      route: '/iot-system'
+    },
+
+    // Asset Management
+    {
+      color: '#f97316', // Orange
+      lightColor: '#fb923c',
+      glow: 'rgba(249, 115, 22, 0.15)',
+      glowSm: 'rgba(249, 115, 22, 0.25)',
+      icon: 'ri-folder-chart-line',
+      title: 'Asset Management',
+      description: 'Track assets, depreciation, maintenance and lifecycle efficiently.',
+      route: '/asset-management'
+    },
+
+    // Room Booking
+    {
+      color: '#ec4899', // Pink
+      lightColor: '#f472b6',
+      glow: 'rgba(236, 72, 153, 0.15)',
+      glowSm: 'rgba(236, 72, 153, 0.25)',
+      icon: 'ri-hotel-bed-line',
+      title: 'Room Booking  Management',
+      description: 'Manage reservations, room availability and customer bookings.',
+      route: '/room-book-management'
+    },
+
+    // Visitor Management
+    {
+      color: '#14b8a6', // Teal
+      lightColor: '#5eead4',
+      glow: 'rgba(20, 184, 166, 0.15)',
+      glowSm: 'rgba(20, 184, 166, 0.25)',
+      icon: 'ri-user-star-line',
+      title: 'Visitor Management',
+      description: 'Digital visitor registration, approvals and secure access control.',
+      route: '/visitor-management'
+    },
+
+    {
+      color: '#0ea5e9', // Sky Blue
+      lightColor: '#7dd3fc',
+      glow: 'rgba(14, 165, 233, 0.15)',
+      glowSm: 'rgba(14, 165, 233, 0.25)',
+      icon: 'ri-parking-box-line',
+      title: 'Parking Management',
+      description: 'Manage vehicle entry, parking slots, passes and automated billing.',
+      route: '/parking-management'
+    },
+
   ];
 
   ngAfterViewInit(): void {

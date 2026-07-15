@@ -146,9 +146,16 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ['smartphone', '#2563EB', 'Mobile Store', 'IMEI tracking and EMI billing support.', '/mobile-store'],
   ['footprints', '#F59E0B', 'Footwear', 'Size and style matrix inventory made simple.', '/footwear'],
   ['gift', '#E30613', 'Gift Shop', 'Combo offers and festive season billing.', '/gift-shop'],
-  ['hammer', '#10B981', 'Hardware', 'Bulk unit conversions and supplier-linked stock.', '/hardware']
-];
+  ['erpsystem', '#7C3AED', 'ERP System', 'Complete business management with finance, inventory and HR modules.', '/erp-system'],
 
+  ['iot-system', '#06B6D4', 'IoT Solutions', 'Connect smart devices for real-time monitoring and automation.', '/iot-system'],
+
+  ['assert-management', '#F97316', 'Asset Management', 'Track assets, maintenance schedules and lifecycle efficiently.', '/asset-management'],
+
+  ['room-book-management', '#EC4899', 'Room Booking', 'Manage reservations, availability and customer bookings with ease.', '/room-book-management'],
+
+  ['visitor-management', '#14B8A6', 'Visitor Management', 'Secure visitor check-in, pass generation and attendance tracking.', '/visitor-management'],
+];
 
   cloudFeats: string[] = ['Cloud Billing', 'Branch Sync', 'Live Reports', 'Mobile App', 'Backup', 'Multi Device Login', 'Data Security', 'Automatic Updates'];
   get cloudCol1(): string[] { return this.cloudFeats.slice(0, Math.ceil(this.cloudFeats.length / 2)); }
@@ -166,7 +173,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ];
 
   stats: Stat[] = [
-    { num: 10000, suffix: '+', label: 'Businesses', isNumeric: true, display: '0' },
+    { num: 750, suffix: '+', label: 'Businesses', isNumeric: true, display: '0' },
     { num: 50, suffix: '+', label: 'Cities', isNumeric: true, display: '0' },
     { num: 99.9, suffix: '%', label: 'Server Uptime', isNumeric: true, display: '0' },
     { num: '24×7', suffix: '', label: 'Support', isNumeric: false, display: '24×7' },
@@ -238,6 +245,8 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     if (this.testiTimer) clearInterval(this.testiTimer);
     if (this.statsObserver) this.statsObserver.disconnect();
   }
+
+  
 
   get currentTesti(): Testimonial { return this.testimonials[this.testiIndex]; }
   prevTesti(): void { this.testiIndex = (this.testiIndex - 1 + this.testimonials.length) % this.testimonials.length; }

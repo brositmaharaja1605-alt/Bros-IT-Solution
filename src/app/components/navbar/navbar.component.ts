@@ -22,29 +22,42 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private routerSub?: Subscription;
   selectedProduct = 0;
 
+  servicesDropdownOpen = false;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: Event) {
-    const target = event.target as HTMLElement;
-    if (!target.closest('.dropdown-products-container')) {
-      this.productsDropdownOpen = false;
-    }
-  }
 
+  /* ---------- CLICK TOGGLE (desktop + mobile accordion) ---------- */
   toggleProductsDropdown(event: Event) {
     event.preventDefault();
     event.stopPropagation();
+
     this.productsDropdownOpen = !this.productsDropdownOpen;
+
+    if (this.productsDropdownOpen) {
+      this.servicesDropdownOpen = false;
+    }
+  }
+
+  toggleServicesDropdown(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.servicesDropdownOpen = !this.servicesDropdownOpen;
+    if (this.servicesDropdownOpen) {
+      this.productsDropdownOpen = false;
+    }
   }
 
   closeProductsDropdown() {
     this.productsDropdownOpen = false;
   }
+  closeServicesDropdown() {
+    this.servicesDropdownOpen = false;
+  }
+
 
   dropdownProducts = [
     {
@@ -97,6 +110,50 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   ];
 
+  dropdownServices = [
+    {
+      title: 'Website Development',
+      desc: 'Responsive business websites and web applications.',
+      icon: 'ri-code-s-slash-line',
+      color: '#2563eb',
+      bgClass: 'bg-soft-blue'
+    },
+    {
+      title: 'Mobile App Development',
+      desc: 'Android & iOS application development.',
+      icon: 'ri-smartphone-line',
+      color: '#10b981',
+      bgClass: 'bg-soft-green'
+    },
+    {
+      title: 'Desktop Software',
+      desc: 'Windows desktop software for businesses.',
+      icon: 'ri-computer-line',
+      color: '#f97316',
+      bgClass: 'bg-soft-orange'
+    },
+    {
+      title: 'Cloud Solutions',
+      desc: 'Cloud hosting, backup and migration.',
+      icon: 'ri-cloud-line',
+      color: '#06b6d4',
+      bgClass: 'bg-soft-cyan'
+    },
+    {
+      title: 'Digital Marketing',
+      desc: 'SEO, Google Ads and Social Media Marketing.',
+      icon: 'ri-megaphone-line',
+      color: '#ec4899',
+      bgClass: 'bg-soft-pink'
+    },
+    {
+      title: 'Point Of Sale',
+      desc: 'Point of purchase is the time',
+      icon: 'ri-shopping-cart-2-line',
+      color: '#8b5cf6',
+      bgClass: 'bg-soft-purple'
+    }
+  ];
   ngOnInit() {
 
     this.theme = (localStorage.getItem('billease-theme') as 'light' | 'dark') || 'light';
@@ -159,6 +216,30 @@ export class NavbarComponent implements OnInit, OnDestroy {
       }
     }
   }
+
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+
+    const target = event.target as HTMLElement;
+
+    if (!target.closest('.dropdown-products-container')) {
+      this.productsDropdownOpen = false;
+    }
+
+    if (!target.closest('.dropdown-services-container')) {
+      this.servicesDropdownOpen = false;
+    }
+
+  }
+
+
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+    this.productsDropdownOpen = false;
+    this.servicesDropdownOpen = false;
+  }
+
 
   navigateToSection(sectionId: string, event: Event) {
     event.preventDefault();
@@ -249,8 +330,4 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
-  closeMobileMenu() {
-    this.mobileMenuOpen = false;
-    this.productsDropdownOpen = false;
-  }
 }
