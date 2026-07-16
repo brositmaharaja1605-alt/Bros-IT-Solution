@@ -106,106 +106,94 @@
   </section> -->
   <section class="trusted-strip py-5">
 
-  <div class="container">
+    <div class="container">
 
-    <!-- Heading -->
-    <div class="row">
-      <div class="col-12 text-center mb-5">
+      <!-- Heading -->
+      <div class="row">
+        <div class="col-12 text-center mb-5">
 
-        <span class="eyebrow">
-          Industries
-        </span>
-
-        <h2 class="section-title mt-3">
-          Trusted across every kind of retail business
-        </h2>
-
-        <p class="section-sub mx-auto">
-          Powerful billing software for every business category.
-        </p>
-
-      </div>
-    </div>
-
-    <!-- Industry Cards -->
-    <div class="row justify-content-center g-3">
-
-      <div
-        class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2"
-        *ngFor="let ind of industries"
-        data-aos="zoom-in">
-
-        <div class="industry-chip h-100">
-
-          <div class="ic">
-
-            <i
-              [attr.data-lucide]="ind[0]"
-              class="industry-icon">
-            </i>
-
-          </div>
-
-          <span>
-            {{ ind[1] }}
+          <span class="eyebrow">
+            Industries
           </span>
 
-        </div>
+          <h2 class="section-title mt-3">
+            Trusted across every kind of retail business
+          </h2>
 
+          <p class="section-sub mx-auto">
+            Powerful billing software for every business category.
+          </p>
+
+        </div>
       </div>
 
-    </div>
+      <!-- Industry Cards -->
+      <div class="row justify-content-center g-3">
 
-  </div>
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2" *ngFor="let ind of industries" data-aos="zoom-in">
 
-</section>
+          <div class="industry-chip h-100">
 
-  <!-- WHY CHOOSE US -->
-   <section class="section py-5" id="why">
-  <div class="container">
+            <div class="ic">
 
-    <div class="text-center mb-5" data-aos="fade-up">
-      <span class="eyebrow">Why BillEase</span>
-      <h2 class="section-title">Built for the way Indian retail actually works</h2>
-      <p class="section-sub mx-auto">
-        Everything you need to run billing, stock and accounts smoothly — with none of the complexity.
-      </p>
-    </div>
+              <i [attr.data-lucide]="ind[0]" class="industry-icon">
+              </i>
 
-    <div class="row g-4">
+            </div>
 
-      <div class="col-12 col-sm-6 col-lg-4"
-           *ngFor="let w of whyItems; let i=index"
-           data-aos="zoom-in"
-           [attr.data-aos-delay]="i*100">
-
-        <div class="feature-card h-100">
-
-          <i data-lucide="check-circle-2"
-             class="check"
-             style="width:18px;height:18px"></i>
-
-          <div class="fc-icon floating-icon"
-               [style.background]="w[1] + '1A'"
-               [style.color]="w[1]">
-
-            <i [attr.data-lucide]="w[0]"
-               style="width:24px;height:24px"></i>
+            <span>
+              {{ ind[1] }}
+            </span>
 
           </div>
 
-          <h4>{{w[2]}}</h4>
-
-          <p>{{w[3]}}</p>
-
         </div>
 
       </div>
 
     </div>
 
-  </div>
-</section>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section py-5" id="why">
+    <div class="container">
+
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="eyebrow">Why BillEase</span>
+        <h2 class="section-title">Built for the way Indian retail actually works</h2>
+        <p class="section-sub mx-auto">
+          Everything you need to run billing, stock and accounts smoothly — with none of the complexity.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-4" *ngFor="let w of whyItems; let i=index" data-aos="zoom-in"
+          [attr.data-aos-delay]="i*100">
+
+          <div class="feature-card h-100">
+
+            <i data-lucide="check-circle-2" class="check" style="width:18px;height:18px"></i>
+
+            <div class="fc-icon floating-icon" [style.background]="w[1] + '1A'" [style.color]="w[1]">
+
+              <i [attr.data-lucide]="w[0]" style="width:24px;height:24px"></i>
+
+            </div>
+
+            <h4>{{w[2]}}</h4>
+
+            <p>{{w[3]}}</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
   <!-- <section class="section" id="why">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
@@ -286,175 +274,177 @@
 
   <!-- DASHBOARD PREVIEW -->
 
- <section class="dashboard-section py-5">
+  <section class="dashboard-section py-5">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="row align-items-center g-5">
+      <div class="row align-items-center g-5">
 
-      <!-- LEFT -->
-      <div class="col-lg-5" data-aos="fade-right">
+        <!-- LEFT -->
+        <div class="col-lg-5" data-aos="fade-right">
 
-        <span class="live-badge">
-          <span class="live-dot"></span>
-          LIVE DASHBOARD
-        </span>
+          <span class="live-badge">
+            <span class="live-dot"></span>
+            LIVE DASHBOARD
+          </span>
 
-        <h2 class="dashboard-title mt-4">
-          See your whole business at a glance
-        </h2>
+          <h2 class="dashboard-title mt-4">
+            See your whole business at a glance
+          </h2>
 
-        <p class="dashboard-subtitle">
-          Revenue, expenses, best sellers, low stock and branch performance —
-          all updating in real time from web or mobile.
-        </p>
+          <p class="dashboard-subtitle">
+            Revenue, expenses, best sellers, low stock and branch performance —
+            all updating in real time from web or mobile.
+          </p>
 
-        <ul class="dashboard-list list-unstyled mt-4">
+          <ul class="dashboard-list list-unstyled mt-4">
 
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            Multi-branch performance comparison
-          </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Multi-branch performance comparison
+            </li>
 
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            Automatic low-stock & expiry alerts
-          </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Automatic low-stock & expiry alerts
+            </li>
 
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            Exportable GST-ready reports
-          </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Exportable GST-ready reports
+            </li>
 
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            Live sales dashboard with analytics
-          </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Live sales dashboard with analytics
+            </li>
 
-        </ul>
+          </ul>
 
-        <a href="#" class="btn btn-danger btn-lg mt-3 dashboard-btn">
-          Explore Dashboard
-          <i class="bi bi-arrow-right ms-2"></i>
-        </a>
+          <a href="#" class="btn btn-danger btn-lg mt-3 dashboard-btn">
+            Explore Dashboard
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
 
-      </div>
+        </div>
 
-      <!-- RIGHT -->
-      <div class="col-lg-7" data-aos="fade-left">
+        <!-- RIGHT -->
+        <div class="col-lg-7" data-aos="fade-left">
 
-        <div class="dashboard-preview">
+          <div class="dashboard-preview">
 
-          <!-- LIVE TOAST -->
-          <div class="live-toast">
+            <!-- LIVE TOAST -->
+            <div class="live-toast">
 
-            <div class="dot"></div>
+              <div class="dot"></div>
 
-            <div>
-              <strong>Live Update</strong><br>
-              <small>Payment Received ₹8,420</small>
-            </div>
-
-          </div>
-
-          <!-- TOP CARDS -->
-          <div class="row g-3 mb-3">
-
-            <div class="col-6 col-md-3">
-              <div class="stat-card revenue-card">
-                <div class="stat-label">Revenue</div>
-                <h3 class="counter">₹12.4L</h3>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-              <div class="stat-card">
-                <div class="stat-label">Expenses</div>
-                <h3 class="counter">₹3.1L</h3>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-              <div class="stat-card">
-                <div class="stat-label">Branches</div>
-                <h3 class="counter">6</h3>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-              <div class="stat-card">
-                <div class="stat-label">Avg Order</div>
-                <h3 class="counter">₹842</h3>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- CHART + TRANSACTIONS -->
-          <div class="row g-3">
-
-            <!-- CHART -->
-            <div class="col-lg-7">
-
-              <div class="chart-card">
-
-                <div class="chart-bars">
-
-                  <div class="bar h1"></div>
-                  <div class="bar h2"></div>
-                  <div class="bar h3"></div>
-                  <div class="bar h4"></div>
-                  <div class="bar h5"></div>
-                  <div class="bar h6"></div>
-                  <div class="bar h7"></div>
-
-                </div>
-
-                <div class="days">
-
-                  <span>Mon</span>
-                  <span>Tue</span>
-                  <span>Wed</span>
-                  <span>Thu</span>
-                  <span>Fri</span>
-                  <span>Sat</span>
-                  <span>Sun</span>
-
-                </div>
-
+              <div>
+                <strong>Live Update</strong><br>
+                <small>Payment Received ₹8,420</small>
               </div>
 
             </div>
 
-            <!-- TRANSACTIONS -->
-            <div class="col-lg-5">
+            <!-- TOP CARDS -->
+            <div class="row g-3 mb-3">
 
-              <div class="transaction-card">
+              <div class="col-6 col-md-3">
+                <div class="stat-card revenue-card">
+                  <div class="stat-label">Revenue</div>
+                  <h3 class="counter">₹12.4L</h3>
+                </div>
+              </div>
 
-                <h6 class="mb-3">
-                  Recent Transactions
-                </h6>
+              <div class="col-6 col-md-3">
+                <div class="stat-card">
+                  <div class="stat-label">Expenses</div>
+                  <h3 class="counter">₹3.1L</h3>
+                </div>
+              </div>
 
-                <div class="transaction">
-                  <span>Sharma Textiles</span>
-                  <strong class="text-success">₹8,420</strong>
+              <div class="col-6 col-md-3">
+                <div class="stat-card">
+                  <div class="stat-label">Branches</div>
+                  <h3 class="counter">6</h3>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="stat-card">
+                  <div class="stat-label">Avg Order</div>
+                  <h3 class="counter">₹842</h3>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- CHART + TRANSACTIONS -->
+            <div class="row g-3">
+
+              <!-- CHART -->
+              <div class="col-lg-7">
+
+                <div class="chart-card">
+
+                  <div class="chart-bars">
+
+                    <div class="bar h1"></div>
+                    <div class="bar h2"></div>
+                    <div class="bar h3"></div>
+                    <div class="bar h4"></div>
+                    <div class="bar h5"></div>
+                    <div class="bar h6"></div>
+                    <div class="bar h7"></div>
+
+                  </div>
+
+                  <div class="days">
+
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+
+                  </div>
+
                 </div>
 
-                <div class="transaction">
-                  <span>Ganesh Jewellers</span>
-                  <strong class="text-success">₹64,200</strong>
-                </div>
+              </div>
 
-                <div class="transaction">
-                  <span>City Bakery</span>
-                  <span class="badge bg-warning text-dark">
-                    Pending
-                  </span>
-                </div>
+              <!-- TRANSACTIONS -->
+              <div class="col-lg-5">
 
-                <div class="transaction">
-                  <span>Ravi Mobiles</span>
-                  <strong class="text-success">₹12,990</strong>
+                <div class="transaction-card">
+
+                  <h6 class="mb-3">
+                    Recent Transactions
+                  </h6>
+
+                  <div class="transaction">
+                    <span>Sharma Textiles</span>
+                    <strong class="text-success">₹8,420</strong>
+                  </div>
+
+                  <div class="transaction">
+                    <span>Ganesh Jewellers</span>
+                    <strong class="text-success">₹64,200</strong>
+                  </div>
+
+                  <div class="transaction">
+                    <span>City Bakery</span>
+                    <span class="badge bg-warning text-dark">
+                      Pending
+                    </span>
+                  </div>
+
+                  <div class="transaction">
+                    <span>Ravi Mobiles</span>
+                    <strong class="text-success">₹12,990</strong>
+                  </div>
+
                 </div>
 
               </div>
@@ -469,9 +459,7 @@
 
     </div>
 
-  </div>
-
-</section>
+  </section>
   <!-- <section class="section" id="dashboard">
     <div class="container">
       <div class="row align-items-center g-5">
@@ -610,44 +598,41 @@
   <!-- POS DEVICES -->
 
   <section class="section py-5" id="devices">
-  <div class="container">
+    <div class="container">
 
-    <div class="text-center mb-5" data-aos="fade-up">
-      <span class="eyebrow">Hardware</span>
-      <h2 class="section-title">Works with the hardware you already use</h2>
-      <p class="section-sub mx-auto">
-        Plug-and-play compatibility with all major POS devices.
-      </p>
-    </div>
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="eyebrow">Hardware</span>
+        <h2 class="section-title">Works with the hardware you already use</h2>
+        <p class="section-sub mx-auto">
+          Plug-and-play compatibility with all major POS devices.
+        </p>
+      </div>
 
-    <div class="row g-4">
+      <div class="row g-4">
 
-      <div class="col-6 col-md-3"
-           *ngFor="let d of devices; let i=index"
-           data-aos="fade-up"
-           [attr.data-aos-delay]="(i % 4) * 70">
+        <div class="col-6 col-md-3" *ngFor="let d of devices; let i=index" data-aos="fade-up"
+          [attr.data-aos-delay]="(i % 4) * 70">
 
-        <div class="device-card">
+          <div class="device-card">
 
-          <span class="shine"></span>
+            <span class="shine"></span>
 
-          <div class="device-icon-wrap">
-            <i [attr.data-lucide]="d[0]"
-               style="width:28px;height:28px">
-            </i>
+            <div class="device-icon-wrap">
+              <i [attr.data-lucide]="d[0]" style="width:28px;height:28px">
+              </i>
+            </div>
+
+            <h6>{{ d[1] }}</h6>
+            <small>{{ d[2] }}</small>
+
           </div>
-
-          <h6>{{ d[1] }}</h6>
-          <small>{{ d[2] }}</small>
 
         </div>
 
       </div>
 
     </div>
-
-  </div>
-</section>
+  </section>
   <!-- <section class="section" id="devices">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
@@ -683,7 +668,7 @@
   </section>
 
   <!-- TESTIMONIALS -->
-    <!-- Customers -->
+  <!-- Customers -->
   <app-customers></app-customers>
 
   <!-- <section class="section" id="customers"
@@ -746,7 +731,7 @@
 
   <!-- FAQ -->
 
-  
+
   <!-- <section class="section" id="faq"
     style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
@@ -773,155 +758,143 @@
   </section> -->
 
   <!-- FINAL CTA -->
-<section class="section">
+  <section class="section">
     <section class="cta-section py-5 overflow-hidden">
 
-<div class="container">
+      <div class="container">
 
-<div class="cta-wrapper position-relative">
+        <div class="cta-wrapper position-relative">
 
-<div class="row align-items-center g-5">
+          <div class="row align-items-center g-5">
 
-<!-- LEFT -->
+            <!-- LEFT -->
 
-<div
-class="col-lg-5 text-center text-lg-start"
-data-aos="fade-right">
+            <div class="col-lg-5 text-center text-lg-start" data-aos="fade-right">
 
-<span class="cta-badge">
+              <span class="cta-badge">
 
-🚀 Trusted POS Software
+                🚀 Trusted POS Software
 
-</span>
+              </span>
 
-<h2 class="cta-title mt-3">
+              <h2 class="cta-title mt-3">
 
-Ready to Grow
+                Ready to Grow
 
-<span>Your Business?</span>
+                <span>Your Business?</span>
 
-</h2>
+              </h2>
 
-<p class="cta-subtitle">
+              <p class="cta-subtitle">
 
-Join 750+ businesses using Bros IT Solutions to simplify Billing,
-Inventory, GST, CRM and Accounting.
+                Join 750+ businesses using Bros IT Solutions to simplify Billing,
+                Inventory, GST, CRM and Accounting.
 
-</p>
+              </p>
 
-<div class="d-flex flex-wrap gap-3 mt-4 justify-content-center justify-content-lg-start">
+              <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center justify-content-lg-start">
 
-<a
-href="#contact"
-class="btn btn-light btn-lg cta-btn">
+                <a href="#contact" class="btn btn-light btn-lg cta-btn">
 
-Start Free Trial
+                  Start Free Trial
 
-</a>
+                </a>
 
-<a
-href="https://wa.me/919363617197"
-target="_blank"
-class="btn btn-success btn-lg cta-btn">
+                <a href="https://wa.me/919363617197" target="_blank" class="btn btn-success btn-lg cta-btn">
 
-WhatsApp Us
+                  WhatsApp Us
 
-</a>
+                </a>
 
-</div>
+              </div>
 
-<div class="row mt-5">
+              <div class="row mt-5">
 
-<div class="col-6">
+                <div class="col-6">
 
-<div class="feature-box">
+                  <div class="feature-box">
 
-✅ GST Billing
+                    ✅ GST Billing
 
-</div>
+                  </div>
 
-</div>
+                </div>
 
-<div class="col-6">
+                <div class="col-6">
 
-<div class="feature-box">
+                  <div class="feature-box">
 
-✅ Inventory
+                    ✅ Inventory
 
-</div>
+                  </div>
 
-</div>
+                </div>
 
-<div class="col-6">
+                <div class="col-6">
 
-<div class="feature-box">
+                  <div class="feature-box">
 
-✅ Barcode Billing
+                    ✅ Barcode Billing
 
-</div>
+                  </div>
 
-</div>
+                </div>
 
-<div class="col-6">
+                <div class="col-6">
 
-<div class="feature-box">
+                  <div class="feature-box">
 
-✅ Cloud Backup
+                    ✅ Cloud Backup
 
-</div>
+                  </div>
 
-</div>
+                </div>
 
-<div class="col-6">
+                <div class="col-6">
 
-<div class="feature-box">
+                  <div class="feature-box">
 
-✅ Multi Branch
+                    ✅ Multi Branch
 
-</div>
+                  </div>
 
-</div>
+                </div>
 
-<div class="col-6">
+                <div class="col-6">
 
-<div class="feature-box">
+                  <div class="feature-box">
 
-✅ Android Billing
+                    ✅ Android Billing
 
-</div>
+                  </div>
 
-</div>
+                </div>
 
-</div>
+              </div>
 
-</div>
+            </div>
 
-<!-- RIGHT -->
+            <!-- RIGHT -->
 
-<div
-class="col-lg-7"
-data-aos="fade-left">
+            <div class="col-lg-7" data-aos="fade-left">
 
-<div class="position-relative">
+              <div class="position-relative">
 
-<!-- Dashboard Image -->
+                <!-- Dashboard Image -->
 
-<img
-src="assets/img/dashboard.png"
-class="img-fluid dashboard-img"
-alt="Dashboard">
+                <img src="assets/img/dashboard.png" class="img-fluid dashboard-img" alt="Dashboard">
 
-</div>
+              </div>
 
-</div>
+            </div>
 
-</div>
+          </div>
 
-</div>
+        </div>
 
-</div>
-</section>
-</section>
+      </div>
+    </section>
+  </section>
 </main>
 
 
@@ -959,162 +932,175 @@ alt="Dashboard">
 
 <!-- FOOTER -->
 
-  <footer>
-    <div class="container" >
-      <div class="row g-4  align-items-start" >
-        <div class="col-lg-4 col-md-6" >
+<footer>
+  <div class="container">
+    <div class="row g-4  align-items-start">
+      <div class="col-lg-4 col-md-6">
 
-          <a href="/" class="footer-brand">
+        <a href="/" class="footer-brand">
 
-            <img src="assets/img/bros-logo.jpg" alt="Bros IT Solutions" class="footer-logo">
+          <img src="assets/img/bros-logo.jpg" alt="Bros IT Solutions" class="footer-logo">
 
-            <div class="footer-brand-text">
+          <div class="footer-brand-text">
 
-              <span class="brand-black">Bros</span>
+            <span class="brand-black">Bros</span>
 
-              <span class="brand-red">IT Solutions</span>
-
-            </div>
-
-          </a>
-
-          <p class="footer-desc">
-            Complete POS and retail billing software for modern Indian businesses.
-          </p>
-
-          <div class="d-flex gap-3 mt-4">
-
-            <a href="#" class=" footer-social footer-social-facebook">
-              <i class="ri-facebook-fill"></i>
-            </a>
-
-            <a href="#" class="footer-social footer-social-insta">
-              <i class="ri-instagram-line"></i>
-            </a>
-
-            <a href="#" class="footer-social footer-social-linkedin">
-              <i class="ri-linkedin-fill"></i>
-            </a>
-
-            <a href="#" class="footer-social footer-social-youtube">
-              <i class="ri-youtube-fill"></i>
-            </a>
-
-
-            <a class="footer-social footer-social-whatsapp chat-button"href="https://wa.me/9363617197" target="_blank" >
-              <i class="ri-whatsapp-fill"></i>
-            </a>
+            <span class="brand-red">IT Solutions</span>
 
           </div>
 
-        </div>
+        </a>
 
-        <div class="col-lg-2 col-6">
+        <p class="footer-desc">
+          Complete POS and retail billing software for modern Indian businesses.
+        </p>
 
-          <h6>Company</h6>
+        <div class="d-flex gap-3 mt-4">
 
-          <a href="#">About Us</a>
+          <a href="https://www.facebook.com/share/18dRknBpXW/?mibextid=wwXIfr"
+            class=" footer-social footer-social-facebook">
+            <i class="ri-facebook-fill"></i>
+          </a>
 
-          <a href="#">Careers</a>
+          <a href="https://www.instagram.com/bros.itsolutions?igsh=bWN3ZnhwOTg2N2xq"
+            class="footer-social footer-social-insta">
+            <i class="ri-instagram-line"></i>
+          </a>
 
-          <a href="#">Blog</a>
+          <a href="#" class="footer-social footer-social-linkedin">
+            <i class="ri-linkedin-fill"></i>
+          </a>
 
-          <!-- <a href="#">Contact</a> -->
-
-        </div>
-
-        <div class="col-lg-2 col-6">
-
-          <h6>Products</h6>
-
-          <a href="#">Billing</a>
-
-          <a href="#">Inventory</a>
-
-          <a href="#">Accounting</a>
-
-          <a href="#">Mobile App</a>
-
-        </div>
-
-        <div class="col-lg-2 col-6">
-
-          <h6>Solutions</h6>
-
-          <a routerLink="/retail-store">Retail Store</a>
-
-          <a routerLink="/restaurant-pos">Restaurant POS</a>
-
-          <a routerLink="/jewellery-shop">Jewellery Shop</a>
-
-          <a routerLink="/supermarket">Supermarket</a>
-
-        </div>
-
-        <div class="col-lg-2 col-6">
-
-          <h6>Contact</h6>
-
-          <a routerLink="/contact" routerLinkActive="active-link">
-
-            <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i> +91 93636
-            17197</a>
-
-          <a routerLink="/contact" routerLinkActive="active-link">
-
-            <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 96001
-            61940</a>
-
-          <a routerLink="/contact" routerLinkActive="active-link">
-
-            <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 99403
-            01367</a>
+          <a href="https://youtube.com/@brositsolutions1940?si=lHJXtVbnN4DXmU67"
+            class="footer-social footer-social-youtube">
+            <i class="ri-youtube-fill"></i>
+          </a>
 
 
-          <a routerLink="/contact" routerLinkActive="active-link">
-
-            <i data-lucide="mail"
-              style="width:14px;height:14px;display:inline;margin-right:6px;"></i>sales&#64;brositsolutions.com</a>
-
-          <a routerLink="/contact" routerLinkActive="active-link">
-
-            <i data-lucide="mail"
-              style="width:14px;height:14px;display:inline;margin-right:6px;"></i>info&#64;brositsolutions.com</a>
-
-          <a routerLink="/contact" routerLinkActive="active-link">
-
-            <i data-lucide="map-pin" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>
-            Chennai - 600049, Tamil Nadu, India.
+          <a class="footer-social footer-social-whatsapp chat-button" href="https://wa.me/9363617197" target="_blank">
+            <i class="ri-whatsapp-fill"></i>
           </a>
 
         </div>
 
       </div>
 
-      <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+      <div class="col-lg-2 col-6">
 
-        <span>© 2026 Bros IT Solutions. All rights reserved.</span>
+        <h6>Company</h6>
 
-        <div class="d-flex gap-3">
+        <a href="#">About Us</a>
 
-          <a href="#" style="margin:0;">Privacy Policy</a>
+        <a href="#">Careers</a>
 
-          <a href="#" style="margin:0;">Terms of Service</a>
+        <a href="#">Blog</a>
 
-        </div>
+        <!-- <a href="#">Contact</a> -->
+
+      </div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Products</h6>
+
+        <a href="#">Billing</a>
+
+        <a href="#">Inventory</a>
+
+        <a href="#">Accounting</a>
+
+        <a href="#">Mobile App</a>
+
+      </div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Services</h6>
+
+        <a routerLink="/services"   (click)="scrollTop()">>Web Development</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>Mobile App Development</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>Windows Software</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>ERP Solutions</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>Billing & Inventory</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>Barcode & RFID</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>IoT Solutions</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>POS Hardware</a>
+
+        <a routerLink="/services"   (click)="scrollTop()">>AMC & Support</a>
+
+      </div>
+
+      <div class="col-lg-2 col-6">
+
+        <h6>Contact</h6>
+
+        <a routerLink="/contact" routerLinkActive="active-link">
+
+          <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i> +91 93636
+          17197</a>
+
+        <a routerLink="/contact" routerLinkActive="active-link">
+
+          <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 96001
+          61940</a>
+
+        <a routerLink="/contact" routerLinkActive="active-link">
+
+          <i data-lucide="phone" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>+91 99403
+          01367</a>
+
+
+        <a routerLink="/contact" routerLinkActive="active-link">
+
+          <i data-lucide="mail"
+            style="width:14px;height:14px;display:inline;margin-right:6px;"></i>sales&#64;brositsolutions.com</a>
+
+        <a routerLink="/contact" routerLinkActive="active-link">
+
+          <i data-lucide="mail"
+            style="width:14px;height:14px;display:inline;margin-right:6px;"></i>info&#64;brositsolutions.com</a>
+
+        <a routerLink="/contact" routerLinkActive="active-link">
+
+          <i data-lucide="map-pin" style="width:14px;height:14px;display:inline;margin-right:6px;"></i>
+          Chennai, Tamil Nadu, India - 600 049.
+        </a>
 
       </div>
 
     </div>
 
-    <!-- Map Location -->
-    <section class="company-map">
-      <div class="container-fluid p-0">
-        <iframe
-          src="https://www.google.com/maps?q=BROS%20IT%20SOLUTIONS%2C%20First%20Floor%20Flat%20No.23%2C%20Ponnan%20Kinaru%20Street%2C%20Villivakkam%2C%20Chennai%20600049&output=embed"
-          width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+
+      <span>© 2026 Bros IT Solutions. All rights reserved.</span>
+
+      <div class="d-flex gap-3">
+
+        <a href="#" style="margin:0;">Privacy Policy</a>
+
+        <a href="#" style="margin:0;">Terms of Service</a>
+
       </div>
-    </section>
-  </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Map Location -->
+  <section class="company-map">
+    <div class="container-fluid p-0">
+      <iframe
+        src="https://www.google.com/maps?q=BROS%20IT%20SOLUTIONS%2C%20First%20Floor%20Flat%20No.23%2C%20Ponnan%20Kinaru%20Street%2C%20Villivakkam%2C%20Chennai%20600049&output=embed"
+        width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+</footer>

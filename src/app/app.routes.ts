@@ -24,13 +24,20 @@ import { ChitFundComponent } from './components/industries/websites/chit-fund/ch
 import { PawnBrokingComponent } from './components/industries/websites/pawn-broking/pawn-broking.component';
 import { ParkingManagementSystemComponent } from './components/industries/websites/parking-management-system/parking-management-system.component';
 import { ServicesComponent } from './components/services/services.component';
-
+import { TechComponent } from './components/tech/tech.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
 
   { path: '', component: HomeComponent },
   { path: 'product', component: ProductComponent },
+
   { path: 'services', component: ServicesComponent  },
+
+  { path: 'tech', component: TechComponent  },
+
+
+
 
   { path: 'dashboard', loadComponent: () => import('./components/dashboard/dashboard.component').then(m => m.DashboardComponent) },
 
