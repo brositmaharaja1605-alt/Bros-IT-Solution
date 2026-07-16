@@ -242,73 +242,124 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
 
   navigateToSection(sectionId: string, event: Event) {
-    event.preventDefault();
-    this.closeMobileMenu();
 
-    if (this.router.url === '/' || this.router.url.startsWith('/#')) {
+  event.preventDefault();
+
+  this.closeMobileMenu();
+
+  this.productsDropdownOpen = false;
+
+  this.router.navigate(
+    ['/'],
+    {
+      fragment: sectionId
+    }
+  ).then(() => {
+
+    setTimeout(() => {
 
       const element = document.getElementById(sectionId);
 
       if (element) {
+
         element.scrollIntoView({
+
           behavior: 'smooth',
+
           block: 'start'
+
         });
+
         this.activeFragment = sectionId;
+
+        history.replaceState(null, '', '#' + sectionId);
+
       }
 
-    } else {
+    }, 100);
 
-      this.router.navigate(['/']).then(() => {
+  });
 
-        setTimeout(() => {
-          const element = document.getElementById(sectionId);
+}
 
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            this.activeFragment = sectionId;
-          }
-        }, 500);
+openProductTab(tab: number, event: Event) {
 
-      });
+  event.preventDefault();
 
+  this.closeMobileMenu();
+
+  this.productsDropdownOpen = false;
+
+  localStorage.setItem('selectedProductTab', tab.toString());
+
+  this.router.navigate(
+    ['/'],
+    {
+      fragment: 'features'
     }
-  }
+  ).then(() => {
 
-  updateActiveLink() {
-    const url = this.router.url;
-    if (url.includes('#about')) {
-      this.activeFragment = 'about';
-    } else if (url.includes('#features')) {
-      this.activeFragment = 'features';
-    } else if (url.includes('#industries')) {
-      this.activeFragment = 'industries';
-    } else if (url.includes('#customers')) {
-      this.activeFragment = 'customers';
-    } else if (url === '/' || url === '') {
-      // Handled by scroll listener or default empty
-    } else {
-      this.activeFragment = '';
-    }
-  }
+    setTimeout(() => {
 
-  /* ---------- LOGO CLICK ---------- */
-  goHome(event: Event): void {
-    event.preventDefault();
-    this.closeMobileMenu();
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+      const element = document.getElementById('features');
+
+      if (element) {
+
+        element.scrollIntoView({
+
+          behavior: 'smooth',
+
+          block: 'start'
+
         });
-        this.activeFragment = '';
-      }, 100);
-    });
+
+      }
+
+    }, 100);
+
+  });
+
+}
+updateActiveLink() {
+
+  const fragment = this.router.parseUrl(this.router.url).fragment;
+
+  if (fragment) {
+
+    this.activeFragment = fragment;
+
+  } else {
+
+    this.activeFragment = '';
+
   }
+
+}
+
+ /* ---------- LOGO CLICK ---------- */
+goHome(event: Event): void {
+
+  event.preventDefault();
+
+  this.closeMobileMenu();
+
+  this.router.navigate(['/']).then(() => {
+
+    window.scrollTo({
+
+      top: 0,
+
+      behavior: 'smooth'
+
+    });
+
+    history.replaceState(null, '', '/');
+
+    this.activeFragment = '';
+
+  });
+
+}
 
   /* ---------- THEME ---------- */
   toggleTheme() {

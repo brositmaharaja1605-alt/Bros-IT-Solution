@@ -1,49 +1,73 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-customers',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './customers.component.html',
-//   styleUrl: './customers.component.css'
-// })
-// export class CustomersComponent {
-
-// }
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
-/* import { TopHeaderComponent } from '../top-header/top-header.component'; */
 
-
-interface Testimonial { name: string; role: string; text: string; img: string; }
+interface Testimonial {
+  name: string;
+  role: string;
+  text: string;
+  img: string;
+}
 
 @Component({
-  selector: 'app-customers',
-  standalone: true,
-  imports: [CommonModule, NavbarComponent],
-  templateUrl: './customers.component.html'
+  selector:'app-customers',
+  standalone:true,
+  imports:[
+    CommonModule,
+    NavbarComponent
+  ],
+  templateUrl:'./customers.component.html',
+  styleUrls:['./customers.component.scss'],
+
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+
 })
-export class CustomersComponent implements AfterViewInit, OnDestroy {
+export class CustomersComponent {
 
-  testimonials: Testimonial[] = [
-    { name: 'Ramesh Kumar', role: 'Owner, City Supermarket', text: 'BillEase cut our billing time in half. GST filing used to take a full day — now it takes minutes.', img: 'https://i.pravatar.cc/100?img=12' },
-    { name: 'Priya Shah', role: 'Manager, Shah Jewellers', text: 'Managing purity and making charges across 3 branches was a nightmare before BillEase. Now everything just syncs.', img: 'https://i.pravatar.cc/100?img=32' },
-    { name: 'Arjun Nair', role: 'Founder, Spice Route Restaurant', text: 'The offline mode saved us during a network outage on our busiest weekend. Never missed a single order.', img: 'https://i.pravatar.cc/100?img=51' },
-    { name: 'Meena Iyer', role: 'Owner, Iyer Textiles', text: 'Tracking size and color variants across our textile stock finally feels effortless.', img: 'https://i.pravatar.cc/100?img=45' }
-  ];
-  testiIndex = 0;
-  private testiTimer: any;
+testimonials: Testimonial[] = [
 
-  ngAfterViewInit(): void {
-    this.testiTimer = setInterval(() => this.nextTesti(), 6000);
-  }
-  ngOnDestroy(): void {
-    if (this.testiTimer) clearInterval(this.testiTimer);
-  }
+  {
+name:'Lakshmi Devi',
+role:'Owner, Jewellery Shop',
+text:'The software is simple, secure and perfect for our jewellery business. Customer support is outstanding.',
+img:'assets/img/customers/customer1.png'
+},
 
-  get currentTesti(): Testimonial { return this.testimonials[this.testiIndex]; }
-  prevTesti(): void { this.testiIndex = (this.testiIndex - 1 + this.testimonials.length) % this.testimonials.length; }
-  nextTesti(): void { this.testiIndex = (this.testiIndex + 1) % this.testimonials.length; }
-  goToTesti(i: number): void { this.testiIndex = i; }
+{
+name:'Ramesh Kumar',
+role:'Owner, City Supermarket',
+text:'Bros IT Solutions transformed our billing process. The POS software is fast, reliable, and easy for our staff to use every day.',
+img:'assets/img/customers/customer2.png'
+},
+
+{
+name:'Arun Kumar',
+role:'Owner, Grocery Store',
+text:'Excellent billing software with cloud backup and barcode support. Highly recommended.',
+img:'assets/img/customers/customer3.png'
+},
+
+{
+name:'Suresh Kumar',
+role:'Owner, Restaurant',
+text:'Restaurant billing is now much faster. Daily reports and sales tracking save us a lot of time.',
+img:'assets/img/customers/customer4.png'
+},
+
+{
+name:'Priya Shah',
+role:'Owner, Beauty & Cosmetics',
+text:'Inventory management and GST billing have become much easier after using Bros IT Solutions software.',
+img:'assets/img/customers/customer5.png'
+},
+
+{
+name:'Keerthana',
+role:'Owner, Mobile Shop',
+text:'Bros IT Solutions provided an excellent POS system with barcode billing and inventory management. Our daily operations are now much smoother.',
+img:'assets/img/customers/customer6.png'
+}
+
+];
+
 }

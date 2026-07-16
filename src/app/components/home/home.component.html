@@ -105,37 +105,59 @@
     </div>
   </section> -->
   <section class="trusted-strip py-5">
+
   <div class="container">
 
-    <p class="text-center text-muted-2 fw-semibold mb-5 section-title">
-      Trusted across every kind of retail business
-    </p>
+    <!-- Heading -->
+    <div class="row">
+      <div class="col-12 text-center mb-5">
 
-    <div class="row g-4">
+        <span class="eyebrow">
+          Industries
+        </span>
+
+        <h2 class="section-title mt-3">
+          Trusted across every kind of retail business
+        </h2>
+
+        <p class="section-sub mx-auto">
+          Powerful billing software for every business category.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Industry Cards -->
+    <div class="row justify-content-center g-3">
 
       <div
-        class="col-6 col-sm-4 col-md-3 col-lg-2"
-        data-aos="fade-up"
-        *ngFor="let ind of industries">
+        class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2"
+        *ngFor="let ind of industries"
+        data-aos="zoom-in">
 
-        <div class="industry-chip">
+        <div class="industry-chip h-100">
 
-           <div class="ic">
+          <div class="ic">
+
             <i
               [attr.data-lucide]="ind[0]"
-              class="industry-icon"
-              style="width:22px;height:22px">
+              class="industry-icon">
             </i>
-          </div> 
 
-          <span>{{ ind[1] }}</span>
+          </div>
+
+          <span>
+            {{ ind[1] }}
+          </span>
 
         </div>
 
       </div>
 
     </div>
+
   </div>
+
 </section>
 
   <!-- WHY CHOOSE US -->
@@ -263,6 +285,193 @@
   </section>
 
   <!-- DASHBOARD PREVIEW -->
+
+ <section class="dashboard-section py-5">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <!-- LEFT -->
+      <div class="col-lg-5" data-aos="fade-right">
+
+        <span class="live-badge">
+          <span class="live-dot"></span>
+          LIVE DASHBOARD
+        </span>
+
+        <h2 class="dashboard-title mt-4">
+          See your whole business at a glance
+        </h2>
+
+        <p class="dashboard-subtitle">
+          Revenue, expenses, best sellers, low stock and branch performance —
+          all updating in real time from web or mobile.
+        </p>
+
+        <ul class="dashboard-list list-unstyled mt-4">
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Multi-branch performance comparison
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Automatic low-stock & expiry alerts
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Exportable GST-ready reports
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Live sales dashboard with analytics
+          </li>
+
+        </ul>
+
+        <a href="#" class="btn btn-danger btn-lg mt-3 dashboard-btn">
+          Explore Dashboard
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-7" data-aos="fade-left">
+
+        <div class="dashboard-preview">
+
+          <!-- LIVE TOAST -->
+          <div class="live-toast">
+
+            <div class="dot"></div>
+
+            <div>
+              <strong>Live Update</strong><br>
+              <small>Payment Received ₹8,420</small>
+            </div>
+
+          </div>
+
+          <!-- TOP CARDS -->
+          <div class="row g-3 mb-3">
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card revenue-card">
+                <div class="stat-label">Revenue</div>
+                <h3 class="counter">₹12.4L</h3>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-label">Expenses</div>
+                <h3 class="counter">₹3.1L</h3>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-label">Branches</div>
+                <h3 class="counter">6</h3>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-label">Avg Order</div>
+                <h3 class="counter">₹842</h3>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CHART + TRANSACTIONS -->
+          <div class="row g-3">
+
+            <!-- CHART -->
+            <div class="col-lg-7">
+
+              <div class="chart-card">
+
+                <div class="chart-bars">
+
+                  <div class="bar h1"></div>
+                  <div class="bar h2"></div>
+                  <div class="bar h3"></div>
+                  <div class="bar h4"></div>
+                  <div class="bar h5"></div>
+                  <div class="bar h6"></div>
+                  <div class="bar h7"></div>
+
+                </div>
+
+                <div class="days">
+
+                  <span>Mon</span>
+                  <span>Tue</span>
+                  <span>Wed</span>
+                  <span>Thu</span>
+                  <span>Fri</span>
+                  <span>Sat</span>
+                  <span>Sun</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- TRANSACTIONS -->
+            <div class="col-lg-5">
+
+              <div class="transaction-card">
+
+                <h6 class="mb-3">
+                  Recent Transactions
+                </h6>
+
+                <div class="transaction">
+                  <span>Sharma Textiles</span>
+                  <strong class="text-success">₹8,420</strong>
+                </div>
+
+                <div class="transaction">
+                  <span>Ganesh Jewellers</span>
+                  <strong class="text-success">₹64,200</strong>
+                </div>
+
+                <div class="transaction">
+                  <span>City Bakery</span>
+                  <span class="badge bg-warning text-dark">
+                    Pending
+                  </span>
+                </div>
+
+                <div class="transaction">
+                  <span>Ravi Mobiles</span>
+                  <strong class="text-success">₹12,990</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
   <!-- <section class="section" id="dashboard">
     <div class="container">
       <div class="row align-items-center g-5">
@@ -334,8 +543,8 @@
   </section> -->
 
   <!-- PRODUCT PAGE -->
-  <section class="section" id="features"
-    style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);"></section>
+  <!-- <section class="section" id="features"
+    style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);"></section> -->
 
   <!-- INDUSTRY SOLUTIONS -->
   <app-industries></app-industries>
@@ -399,7 +608,47 @@
   </section>
 
   <!-- POS DEVICES -->
-  <section class="section" id="devices">
+
+  <section class="section py-5" id="devices">
+  <div class="container">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Hardware</span>
+      <h2 class="section-title">Works with the hardware you already use</h2>
+      <p class="section-sub mx-auto">
+        Plug-and-play compatibility with all major POS devices.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-6 col-md-3"
+           *ngFor="let d of devices; let i=index"
+           data-aos="fade-up"
+           [attr.data-aos-delay]="(i % 4) * 70">
+
+        <div class="device-card">
+
+          <span class="shine"></span>
+
+          <div class="device-icon-wrap">
+            <i [attr.data-lucide]="d[0]"
+               style="width:28px;height:28px">
+            </i>
+          </div>
+
+          <h6>{{ d[1] }}</h6>
+          <small>{{ d[2] }}</small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <!-- <section class="section" id="devices">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
         <span class="eyebrow">Hardware</span>
@@ -417,7 +666,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- STATS -->
   <section class="section">
@@ -434,9 +683,12 @@
   </section>
 
   <!-- TESTIMONIALS -->
-   <section class="section" id="customers"
+    <!-- Customers -->
+  <app-customers></app-customers>
+
+  <!-- <section class="section" id="customers"
     style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <!-- <div class="container">
+    <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
         <span class="eyebrow">Customers</span>
         <h2 class="section-title">Loved by retailers across India</h2>
@@ -460,8 +712,8 @@
         <button *ngFor="let t of testimonials; let i = index" [class.active]="i === testiIndex"
           [attr.aria-label]="'Go to testimonial ' + (i + 1)" (click)="goToTesti(i)"></button>
       </div>
-    </div> -->
-  </section> 
+    </div>
+  </section> -->
 
   <!-- PRICING -->
   <!-- <section class="section" id="pricing">
@@ -493,7 +745,9 @@
 
 
   <!-- FAQ -->
-  <section class="section" id="faq"
+
+  
+  <!-- <section class="section" id="faq"
     style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
@@ -516,24 +770,161 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- FINAL CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="final-cta" data-aos="zoom-in">
-        <h2>Ready to grow your business?</h2>
-        <p style="max-width:480px;margin:0 auto 28px;opacity:.95;">Join 10,000+ retailers already billing smarter with
-          BillEase POS.</p>
-        <div class="d-flex flex-wrap gap-3 justify-content-center">
-          <a href="#" class="btn-navy-outline" style="background:#fff;border-color:#fff;color:var(--red);">Start Free
-            Trial</a>
-          <a href="#" class="btn-navy-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">Book Demo</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="section">
+    <section class="cta-section py-5 overflow-hidden">
+
+<div class="container">
+
+<div class="cta-wrapper position-relative">
+
+<div class="row align-items-center g-5">
+
+<!-- LEFT -->
+
+<div
+class="col-lg-5 text-center text-lg-start"
+data-aos="fade-right">
+
+<span class="cta-badge">
+
+🚀 Trusted POS Software
+
+</span>
+
+<h2 class="cta-title mt-3">
+
+Ready to Grow
+
+<span>Your Business?</span>
+
+</h2>
+
+<p class="cta-subtitle">
+
+Join 750+ businesses using Bros IT Solutions to simplify Billing,
+Inventory, GST, CRM and Accounting.
+
+</p>
+
+<div class="d-flex flex-wrap gap-3 mt-4 justify-content-center justify-content-lg-start">
+
+<a
+href="#contact"
+class="btn btn-light btn-lg cta-btn">
+
+Start Free Trial
+
+</a>
+
+<a
+href="https://wa.me/919363617197"
+target="_blank"
+class="btn btn-success btn-lg cta-btn">
+
+WhatsApp Us
+
+</a>
+
+</div>
+
+<div class="row mt-5">
+
+<div class="col-6">
+
+<div class="feature-box">
+
+✅ GST Billing
+
+</div>
+
+</div>
+
+<div class="col-6">
+
+<div class="feature-box">
+
+✅ Inventory
+
+</div>
+
+</div>
+
+<div class="col-6">
+
+<div class="feature-box">
+
+✅ Barcode Billing
+
+</div>
+
+</div>
+
+<div class="col-6">
+
+<div class="feature-box">
+
+✅ Cloud Backup
+
+</div>
+
+</div>
+
+<div class="col-6">
+
+<div class="feature-box">
+
+✅ Multi Branch
+
+</div>
+
+</div>
+
+<div class="col-6">
+
+<div class="feature-box">
+
+✅ Android Billing
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div
+class="col-lg-7"
+data-aos="fade-left">
+
+<div class="position-relative">
+
+<!-- Dashboard Image -->
+
+<img
+src="assets/img/dashboard.png"
+class="img-fluid dashboard-img"
+alt="Dashboard">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+</section>
 </main>
+
+
 
 <!-- FOOTER -->
 <!-- <footer>
@@ -567,7 +958,7 @@
 </footer> -->
 
 <!-- FOOTER -->
-<footer>
+
   <footer>
     <div class="container" >
       <div class="row g-4  align-items-start" >
@@ -593,11 +984,11 @@
 
           <div class="d-flex gap-3 mt-4">
 
-            <a href="https://www.facebook.com/share/18dRknBpXW/?mibextid=wwXIfr" class=" footer-social footer-social-facebook">
+            <a href="#" class=" footer-social footer-social-facebook">
               <i class="ri-facebook-fill"></i>
             </a>
 
-            <a href="https://www.instagram.com/bros.itsolutions?igsh=bWN3ZnhwOTg2N2xq" class="footer-social footer-social-insta">
+            <a href="#" class="footer-social footer-social-insta">
               <i class="ri-instagram-line"></i>
             </a>
 
@@ -605,7 +996,7 @@
               <i class="ri-linkedin-fill"></i>
             </a>
 
-            <a href="https://youtube.com/@posbillingsoftware1563?si=DmISYYMXVfJpQwwO" class="footer-social footer-social-youtube">
+            <a href="#" class="footer-social footer-social-youtube">
               <i class="ri-youtube-fill"></i>
             </a>
 
