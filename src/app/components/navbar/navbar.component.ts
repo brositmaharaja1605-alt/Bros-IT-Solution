@@ -24,6 +24,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   servicesDropdownOpen = false;
 
+  downloadDropdownOpen = false;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute
@@ -51,6 +53,19 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
+
+
+  toggleDownloadDropdown(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.downloadDropdownOpen = !this.downloadDropdownOpen;
+
+    this.productsDropdownOpen = false;
+    this.servicesDropdownOpen = false;
+  }
+
+
   closeProductsDropdown() {
     this.productsDropdownOpen = false;
   }
@@ -58,6 +73,29 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.servicesDropdownOpen = false;
   }
 
+goServices(event: Event) {
+
+  event.preventDefault();
+
+  this.closeServicesDropdown();
+
+  this.closeMobileMenu();
+
+  this.router.navigate(['/services']).then(() => {
+
+    setTimeout(() => {
+
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+
+    }, 50);
+
+  });
+
+}
 
   dropdownProducts = [
     {
@@ -112,48 +150,104 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   dropdownServices = [
     {
-      title: 'Website Development',
-      desc: 'Responsive business websites and web applications.',
+      title: 'Web Development',
+      desc: 'Modern responsive websites, business portals and custom web applications.',
       icon: 'ri-code-s-slash-line',
       color: '#2563eb',
       bgClass: 'bg-soft-blue'
     },
     {
       title: 'Mobile App Development',
-      desc: 'Android & iOS application development.',
+      desc: 'Native & cross-platform Android and iOS mobile applications.',
       icon: 'ri-smartphone-line',
       color: '#10b981',
       bgClass: 'bg-soft-green'
     },
     {
-      title: 'Desktop Software',
-      desc: 'Windows desktop software for businesses.',
+      title: 'Windows Software Development',
+      desc: 'Powerful desktop applications for retail, manufacturing and enterprises.',
       icon: 'ri-computer-line',
       color: '#f97316',
       bgClass: 'bg-soft-orange'
     },
     {
-      title: 'Cloud Solutions',
-      desc: 'Cloud hosting, backup and migration.',
-      icon: 'ri-cloud-line',
+      title: 'ERP Solutions',
+      desc: 'Complete ERP software for inventory, accounts, HR and operations.',
+      icon: 'ri-building-4-line',
+      color: '#8b5cf6',
+      bgClass: 'bg-soft-purple'
+    },
+    {
+      title: 'Billing & Inventory Software',
+      desc: 'GST billing, stock management, barcode billing and purchase tracking.',
+      icon: 'ri-file-list-3-line',
+      color: '#facc15',
+      bgClass: 'bg-soft-yellow'
+    },
+    {
+      title: 'Barcode & RFID Solutions',
+      desc: 'Barcode printing, RFID tagging and inventory automation solutions.',
+      icon: 'ri-qr-code-line',
       color: '#06b6d4',
       bgClass: 'bg-soft-cyan'
     },
     {
-      title: 'Digital Marketing',
-      desc: 'SEO, Google Ads and Social Media Marketing.',
-      icon: 'ri-megaphone-line',
+      title: 'IoT Integration',
+      desc: 'Connect smart devices, sensors and industrial automation systems.',
+      icon: 'ri-cpu-line',
+      color: '#ef4444',
+      bgClass: 'bg-soft-red'
+    },
+    {
+      title: 'POS Hardware Solutions',
+      desc: 'Barcode scanners, receipt printers, cash drawers and POS terminals.',
+      icon: 'ri-printer-line',
       color: '#ec4899',
       bgClass: 'bg-soft-pink'
     },
     {
-      title: 'Point Of Sale',
-      desc: 'Point of purchase is the time',
-      icon: 'ri-shopping-cart-2-line',
-      color: '#8b5cf6',
-      bgClass: 'bg-soft-purple'
+      title: 'Annual Maintenance & Technical Support',
+      desc: 'Software AMC, remote support, upgrades and on-site technical assistance.',
+      icon: 'ri-customer-service-2-line',
+      color: '#14b8a6',
+      bgClass: 'bg-soft-teal'
     }
   ];
+
+downloads = [
+  {
+    name: 'Software Brochure',
+    icon: 'ri-file-pdf-2-fill',
+    color: '#dc3545',
+    type: 'file',
+    file: 'assets/pdf/BROS IT SOLUTIONS NEW.pdf',
+    downloadName: 'Bros-IT-Solutions-Brochure.pdf'
+  },
+  {
+    name: 'Hardware Brochure',
+    icon: 'ri-file-pdf-2-fill',
+    color: '#f59e0b',
+    type: 'file',
+    file: 'assets/pdf/PRINTER & HARDWARE.pdf',
+    downloadName: 'PRINTER-HARDWARE.pdf'
+  },
+  {
+    name: 'UltraViewer',
+    icon: 'ri-computer-line',
+    color: '#2563eb',
+    type: 'link',
+    link: 'https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe'
+  },
+  {
+    name: 'AnyDesk',
+    icon: 'ri-remote-control-line',
+    color: '#ef4444',
+    type: 'link',
+    link: 'https://anydesk.com/en/downloads/thank-you?dv=win_exe'
+  }
+];
+
+
   ngOnInit() {
 
     this.theme = (localStorage.getItem('billease-theme') as 'light' | 'dark') || 'light';
@@ -188,6 +282,34 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
+
+
+downloadFile(item: any): void {
+
+  if (item.type === 'file') {
+
+    const link = document.createElement('a');
+
+    link.href = item.file;
+
+    link.download = item.downloadName;
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+  } else {
+
+    window.open(item.link, '_blank');
+
+  }
+
+  this.downloadDropdownOpen = false;
+
+}
+
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled = window.scrollY > 80;
@@ -218,148 +340,153 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: Event) {
+@HostListener('document:click', ['$event'])
+onDocumentClick(event: Event) {
 
-    const target = event.target as HTMLElement;
+  const target = event.target as HTMLElement;
 
-    if (!target.closest('.dropdown-products-container')) {
-      this.productsDropdownOpen = false;
-    }
-
-    if (!target.closest('.dropdown-services-container')) {
-      this.servicesDropdownOpen = false;
-    }
-
+  if (!target.closest('.dropdown-products-container')) {
+    this.productsDropdownOpen = false;
   }
+
+  if (!target.closest('.dropdown-services-container')) {
+    this.servicesDropdownOpen = false;
+  }
+
+  if (!target.closest('.dropdown-download-container')) {
+    this.downloadDropdownOpen = false;
+  }
+
+}
 
 
   closeMobileMenu() {
     this.mobileMenuOpen = false;
     this.productsDropdownOpen = false;
     this.servicesDropdownOpen = false;
+    this.downloadDropdownOpen = false;
   }
 
 
   navigateToSection(sectionId: string, event: Event) {
 
-  event.preventDefault();
+    event.preventDefault();
 
-  this.closeMobileMenu();
+    this.closeMobileMenu();
 
-  this.productsDropdownOpen = false;
+    this.productsDropdownOpen = false;
 
-  this.router.navigate(
-    ['/'],
-    {
-      fragment: sectionId
-    }
-  ).then(() => {
-
-    setTimeout(() => {
-
-      const element = document.getElementById(sectionId);
-
-      if (element) {
-
-        element.scrollIntoView({
-
-          behavior: 'smooth',
-
-          block: 'start'
-
-        });
-
-        this.activeFragment = sectionId;
-
-        history.replaceState(null, '', '#' + sectionId);
-
+    this.router.navigate(
+      ['/'],
+      {
+        fragment: sectionId
       }
+    ).then(() => {
 
-    }, 100);
+      setTimeout(() => {
 
-  });
+        const element = document.getElementById(sectionId);
 
-}
+        if (element) {
 
-openProductTab(tab: number, event: Event) {
+          element.scrollIntoView({
 
-  event.preventDefault();
+            behavior: 'smooth',
 
-  this.closeMobileMenu();
+            block: 'start'
 
-  this.productsDropdownOpen = false;
+          });
 
-  localStorage.setItem('selectedProductTab', tab.toString());
+          this.activeFragment = sectionId;
 
-  this.router.navigate(
-    ['/'],
-    {
-      fragment: 'features'
-    }
-  ).then(() => {
+          history.replaceState(null, '', '#' + sectionId);
 
-    setTimeout(() => {
+        }
 
-      const element = document.getElementById('features');
-
-      if (element) {
-
-        element.scrollIntoView({
-
-          behavior: 'smooth',
-
-          block: 'start'
-
-        });
-
-      }
-
-    }, 100);
-
-  });
-
-}
-updateActiveLink() {
-
-  const fragment = this.router.parseUrl(this.router.url).fragment;
-
-  if (fragment) {
-
-    this.activeFragment = fragment;
-
-  } else {
-
-    this.activeFragment = '';
-
-  }
-
-}
-
- /* ---------- LOGO CLICK ---------- */
-goHome(event: Event): void {
-
-  event.preventDefault();
-
-  this.closeMobileMenu();
-
-  this.router.navigate(['/']).then(() => {
-
-    window.scrollTo({
-
-      top: 0,
-
-      behavior: 'smooth'
+      }, 100);
 
     });
 
-    history.replaceState(null, '', '/');
+  }
 
-    this.activeFragment = '';
+  openProductTab(tab: number, event: Event) {
 
-  });
+    event.preventDefault();
 
-}
+    this.closeMobileMenu();
+
+    this.productsDropdownOpen = false;
+
+    localStorage.setItem('selectedProductTab', tab.toString());
+
+    this.router.navigate(
+      ['/'],
+      {
+        fragment: 'features'
+      }
+    ).then(() => {
+
+      setTimeout(() => {
+
+        const element = document.getElementById('features');
+
+        if (element) {
+
+          element.scrollIntoView({
+
+            behavior: 'smooth',
+
+            block: 'start'
+
+          });
+
+        }
+
+      }, 100);
+
+    });
+
+  }
+  updateActiveLink() {
+
+    const fragment = this.router.parseUrl(this.router.url).fragment;
+
+    if (fragment) {
+
+      this.activeFragment = fragment;
+
+    } else {
+
+      this.activeFragment = '';
+
+    }
+
+  }
+
+  /* ---------- LOGO CLICK ---------- */
+  goHome(event: Event): void {
+
+    event.preventDefault();
+
+    this.closeMobileMenu();
+
+    this.router.navigate(['/']).then(() => {
+
+      window.scrollTo({
+
+        top: 0,
+
+        behavior: 'smooth'
+
+      });
+
+      history.replaceState(null, '', '/');
+
+      this.activeFragment = '';
+
+    });
+
+  }
 
   /* ---------- THEME ---------- */
   toggleTheme() {

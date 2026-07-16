@@ -283,6 +283,16 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.statsAnimated = true;
   }
 
+  scrollTop() {
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, 100);
+}
+
+
   private renderCharts(): void {
     if (typeof ApexCharts === 'undefined') return;
     const heroEl = document.querySelector('#heroChart');

@@ -1,1 +1,324 @@
-<p>services works!</p>
+<!-- ===================== HERO ===================== -->
+
+<section class="hero-dark position-relative overflow-hidden ">
+
+    <div class="hero-grid-lines"></div>
+    <div class="hero-dot hero-dot-1"></div>
+    <div class="hero-dot hero-dot-2"></div>
+    <div class="hero-dot hero-dot-3"></div>
+
+    <div class="container py-5 position-relative">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="eyebrow-pill mb-3">
+                    <i class="ri-dashboard-3-line me-1"></i>
+                    OUR SERVICES
+                </span>
+
+                <h1 class="hero-heading mb-3">
+                    Complete Software &amp;
+                    <span class="text-cyan">Digital Solutions</span>
+                </h1>
+
+                <p class="hero-para mb-4">
+                    We deliver end-to-end software solutions that help businesses
+                    streamline operations, improve efficiency and achieve growth.
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <a href="#serviceCards" class="btn btn-primary-solid btn-lg px-4">
+                        Explore Services
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </a>
+
+
+                    <a routerLink="/contact" routerLinkActive="active-link"
+                        class="btn btn-outline-dark-hero btn-lg px-4">
+                        <i class="ri-customer-service-2-line me-2"></i>
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 d-none d-lg-block">
+
+                <div class="hero-illustration">
+
+                    <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" class="w-100">
+
+                        <!-- laptop base -->
+                        <rect x="90" y="40" width="300" height="200" rx="10" fill="#0F1B3D" stroke="#2A3B6B"
+                            stroke-width="2" />
+                        <rect x="105" y="55" width="270" height="170" rx="4" fill="#132352" />
+
+                        <!-- screen tiles -->
+                        <rect x="120" y="70" width="60" height="60" rx="8" fill="#1D3A8F" />
+                        <path d="M138 92 l8 8 -8 8 M158 92 l-8 8 8 8" stroke="#8FB6FF" stroke-width="3" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+
+                        <rect x="190" y="70" width="60" height="60" rx="8" fill="#B4483F" />
+                        <circle cx="212" cy="90" r="6" fill="#FBCFE8" />
+                        <path d="M198 118 l14 -16 12 12 10 -10 12 14 z" fill="#FDE68A" />
+
+                        <rect x="260" y="70" width="95" height="60" rx="8" fill="#1E40AF" />
+                        <rect x="272" y="82" width="70" height="8" rx="4" fill="#93C5FD" />
+                        <rect x="272" y="96" width="50" height="8" rx="4" fill="#93C5FD" />
+                        <rect x="272" y="110" width="60" height="8" rx="4" fill="#93C5FD" />
+
+                        <rect x="120" y="140" width="45" height="70" rx="10" fill="#0EA5E9" />
+                        <rect x="130" y="150" width="25" height="45" rx="4" fill="#0F1B3D" />
+                        <circle cx="142" cy="200" r="4" fill="#0F1B3D" />
+
+                        <rect x="175" y="150" width="80" height="50" rx="8" fill="#111E4A" />
+                        <rect x="185" y="160" width="60" height="6" rx="3" fill="#3B5BDB" />
+                        <rect x="185" y="172" width="45" height="6" rx="3" fill="#3B5BDB" />
+                        <rect x="185" y="184" width="55" height="6" rx="3" fill="#3B5BDB" />
+
+                        <!-- laptop hinge/base -->
+                        <path d="M70 240 L410 240 L390 260 L90 260 Z" fill="#152652" stroke="#2A3B6B"
+                            stroke-width="2" />
+
+                        <!-- cloud + gear floating -->
+                        <g transform="translate(400,90)">
+                            <path d="M0 20 a14 14 0 0 1 26 -6 a12 12 0 0 1 10 22 h-38 a10 10 0 0 1 2 -16z"
+                                fill="#1D3A8F" />
+                        </g>
+
+                        <g transform="translate(410,170)" fill="#93C5FD" opacity="0.8">
+                            <circle cx="0" cy="0" r="16" />
+                            <circle cx="0" cy="0" r="6" fill="#0F1B3D" />
+                        </g>
+
+                        <!-- orbit ring -->
+                        <ellipse cx="240" cy="255" rx="150" ry="16" fill="none" stroke="#2A3B6B" stroke-width="1.5"
+                            opacity="0.6" />
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+
+<section id="serviceCards" class="py-5 services-section">
+
+    <div class="container">
+
+        <div class="section-eyebrow text-center mb-2">— WHAT WE DO —</div>
+        <h2 class="section-title text-center mb-2">Our Software <span class="text-blue">Services</span></h2>
+        <p class="section-sub text-center mb-5">High performance services for modern businesses</p>
+
+        <div class="service-grid">
+
+            <div class="service-card" *ngFor="let service of services">
+
+                <div class="service-card-icon mb-3" [style.background]="service.color">
+
+                    <i [class]="service.icon"></i>
+
+                </div>
+
+                <h5 class="fw-bold mb-2 service-card-title">
+                    {{service.title}}
+                </h5>
+
+                <p class="service-card-desc mb-3">
+                    {{service.description}}
+                </p>
+
+                <button class="btn btn-link-arrow px-0">
+                    Learn More
+                    <i class="ri-arrow-right-line ms-2"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== WHY CHOOSE ===================== -->
+
+<section class="py-5 why-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-5">
+
+                <div class="section-eyebrow mb-2">WHY CHOOSE US</div>
+
+                <h2 class="fw-bold mb-3 why-title">
+                    Why Businesses Trust
+                    <span class="text-blue d-block">Bros IT Solutions</span>
+                </h2>
+
+                <p class="why-sub">
+                    We are committed to delivering quality software solutions with
+                    timely support and long-term partnership.
+                </p>
+
+            </div>
+
+            <div class="col-lg-7">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6" *ngFor="let item of whyChooseItems">
+
+                        <div class="why-card">
+
+                            <div class="why-card-icon" [style.color]="item.color"
+                                [style.background]="item.color + '1A'">
+
+                                <i [class]="item.icon"></i>
+
+                            </div>
+
+                            <div>
+                                <h6 class="fw-bold mb-1">{{item.title}}</h6>
+                                <p class="mb-0 why-card-desc">{{item.description}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+
+<section class="py-5 process-section">
+
+    <div class="container">
+
+        <div class="section-eyebrow text-center mb-2">OUR PROCESS</div>
+        <h2 class="section-title text-center mb-5">Our Development <span class="text-blue">Process</span></h2>
+
+        <div class="process-track">
+
+            <div class="process-step" *ngFor="let step of processSteps">
+
+                <div class="process-circle" [style.background]="step.color">
+                    <i [class]="step.icon"></i>
+                </div>
+
+                <div class="process-label">Step {{step.step}}</div>
+                <h6 class="fw-bold mb-1">{{step.title}}</h6>
+                <p class="process-desc mb-0">{{step.description}}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== STATS ===================== -->
+
+<section class="stats-bar py-4">
+
+    <div class="container">
+
+        <div class="row g-4 text-center text-md-start">
+
+            <div class="col-6 col-md-3 d-flex align-items-center gap-3" *ngFor="let stat of stats">
+
+                <i [class]="stat.icon" [style.color]="stat.color" class="stat-icon"></i>
+
+                <div>
+                    <h3 class="stat-value mb-0">{{stat.value}}</h3>
+                    <p class="stat-label mb-0">{{stat.label}}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== TECHNOLOGIES ===================== -->
+
+<section class="py-5 tech-strip">
+
+    <div class="container">
+
+        <div class="section-eyebrow text-center mb-4">TECHNOLOGIES WE USE</div>
+
+        <div class="tech-pill-row">
+
+            <div class="tech-pill" *ngFor="let tech of technologies">
+
+                <span class="tech-pill-badge" [style.background]="tech.color">
+                    {{tech.label}}
+                </span>
+
+                {{tech.name}}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== CTA ===================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="cta-banner d-flex flex-wrap align-items-center justify-content-between gap-4">
+
+            <div>
+                <h3 class="fw-bold mb-2 text-white">Ready to Build Your Next Project?</h3>
+                <p class="mb-0 cta-banner-sub">Let's bring your ideas to life with smart and scalable solutions.</p>
+            </div>
+
+            <div class="d-flex gap-3 flex-wrap">
+
+                <a routerLink="/contact" class="btn btn-cta-white px-4">
+                    Contact Us Today
+                    <i class="ri-arrow-right-line ms-2"></i>
+                </a>
+
+                <a href="tel:+911234567890" class="btn btn-cta-outline px-4">
+                    <i class="ri-phone-line me-2"></i>
+                    Call Us: +91 9363617197
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

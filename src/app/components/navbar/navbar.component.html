@@ -1,10 +1,10 @@
 <a href="#main" class="skip-link">Skip to content</a>
 
 <nav class="navbar-custom" [class.scrolled]="isScrolled">
-<div class="container d-flex align-items-center justify-content-between">    <!-- Logo -->
+  <div class="container d-flex align-items-center justify-content-between"> <!-- Logo -->
     <a href="/" class="navbar-brand-custom" (click)="goHome($event)">
       <img src="assets/img/bros-logo.jpg
-      "   alt="Logo" width="100" height="100"class="logo-img" style="border:2px solid red;">
+      " alt="Logo" width="100" height="100" class="logo-img">
       <span class="brand-text ">
         Bros <span class="dot">IT Solutions</span>
       </span>
@@ -12,62 +12,53 @@
     </a>
 
     <!-- Desktop Navigation -->
-<div class="nav-links d-none d-lg-flex">
+    <div class="nav-links d-none d-lg-flex">
 
- <a
-href="#about"
-[class.active-link]="activeFragment==='about'"
-(click)="navigateToSection('about',$event)">
-About
-</a>
+      <a href="#about" [class.active-link]="activeFragment==='about'" (click)="navigateToSection('about',$event)">
+        About
+      </a>
 
-  <!-- Products Dropdown -->
-  <div class="dropdown dropdown-products-container">
+      <!-- Products Dropdown -->
+      <div class="dropdown dropdown-products-container">
 
-  <a
-    class="dropdown-toggle nav-dropdown"
-    href="#"
-    role="button"
-    (click)="toggleProductsDropdown($event)"
-    [class.active-link]="productsDropdownOpen">
-    Products
-  </a>
-
-  <div
-    class="dropdown-menu mega-menu border-0 shadow-lg rounded-4 p-4"
-    [class.show]="productsDropdownOpen">
-
-    <div class="row g-3">
-
-      <div class="col-lg-6" *ngFor="let p of dropdownProducts">
-
-        <a
-          href="#features"
-          (click)="openProductTab(p.tabIndex, $event)"
-          class="product-dropdown-card d-flex align-items-start p-3">
-
-          <div
-            class="product-dropdown-icon-wrap me-3"
-            [ngClass]="p.bgClass"
-            [style.color]="p.color">
-
-            <i [class]="p.icon"></i>
-
-          </div>
-
-          <div class="product-info-text">
-
-            <h6 class="fw-bold mb-1">
-              {{ p.title }}
-            </h6>
-
-            <p class="mb-0 small">
-              {{ p.desc }}
-            </p>
-
-          </div>
-
+        <a class="dropdown-toggle nav-dropdown" href="#" role="button" (click)="toggleProductsDropdown($event)"
+          [class.active-link]="productsDropdownOpen">
+          Products
         </a>
+
+        <div class="dropdown-menu mega-menu border-0 shadow-lg rounded-4 p-4" [class.show]="productsDropdownOpen">
+
+          <div class="row g-3">
+
+            <div class="col-lg-6" *ngFor="let p of dropdownProducts">
+
+              <a href="#features" (click)="openProductTab(p.tabIndex, $event)"
+                class="product-dropdown-card d-flex align-items-start p-3">
+
+                <div class="product-dropdown-icon-wrap me-3" [ngClass]="p.bgClass" [style.color]="p.color">
+
+                  <i [class]="p.icon"></i>
+
+                </div>
+
+                <div class="product-info-text">
+
+                  <h6 class="fw-bold mb-1">
+                    {{ p.title }}
+                  </h6>
+
+                  <p class="mb-0 small">
+                    {{ p.desc }}
+                  </p>
+
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+
+        </div>
 
       </div>
 
@@ -81,7 +72,7 @@ About
         <div class="dropdown-menu mega-menu" [class.show]="servicesDropdownOpen">
           <div class="row g-3">
             <div class="col-lg-6" *ngFor="let s of dropdownServices">
-              <a routerLink="/services" (click)="closeServicesDropdown()"
+              <a routerLink="/services" (click)="closeServicesDropdown()" (click)="goServices($event)"
                 class="product-dropdown-card d-flex align-items-start p-3">
                 <div class="product-dropdown-icon-wrap me-3" [ngClass]="s.bgClass" [style.color]="s.color">
                   <i [class]="s.icon"></i>
@@ -96,35 +87,68 @@ About
         </div>
       </div>
 
+
+
+
+
+      <a href="#industries" [class.active-link]="activeFragment === 'industries'"
+        (click)="navigateToSection('industries',$event)">
+        Industries
+      </a>
+
+      <a href="#customers" [class.active-link]="activeFragment === 'customers'"
+        (click)="navigateToSection('customers',$event)">
+        Customers
+      </a>
+
+
+      <a routerLink="/tech" routerLinkActive="active-link">
+        Tech
+      </a>
+
+
+
+      <a routerLink="/contact" routerLinkActive="active-link">
+        Contact
+      </a>
+
+
+
+
+      <div class="dropdown position-relative dropdown-download-container">
+
+        <button class="btn btn-primary dropdown-toggle" (click)="toggleDownloadDropdown($event)">
+
+          <i class="ri-download-cloud-2-line me-2"></i>
+
+          Download
+
+        </button>
+
+        <div class="download-dropdown shadow-lg" *ngIf="downloadDropdownOpen">
+
+          <a *ngFor="let d of downloads" href="javascript:void(0)" (click)="downloadFile(d)" class="download-item">
+
+            <i [class]="d.icon" [style.color]="d.color"></i>
+
+            <span>{{ d.name }}</span>
+
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
-
-  </div>
-
-</div>
-
-  <a href="#industries"
-     [class.active-link]="activeFragment === 'industries'"
-     (click)="navigateToSection('industries',$event)">
-    Industries
-  </a>
-
-  <a href="#customers"
-     [class.active-link]="activeFragment === 'customers'"
-     (click)="navigateToSection('customers',$event)">
-    Customers
-  </a>
-
-  <a routerLink="/contact"
-     routerLinkActive="active-link">
-    Contact
-  </a>
-
-</div>
 
     <!-- Right Side Actions -->
     <div class="right-side">
 
-      <button class="menu-btn d-lg-none" aria-label="Open menu" (click)="toggleMobileMenu()">
+      <button
+        class="menu-btn d-lg-none"
+        aria-label="Open menu"
+        [attr.aria-expanded]="mobileMenuOpen"
+        (click)="toggleMobileMenu()">
         <i class="ri-menu-3-line" [class.ri-close-line]="mobileMenuOpen"></i>
       </button>
 
@@ -132,67 +156,116 @@ About
   </div>
 </nav>
 
-<!-- Mobile Navigation Drawer -->
-<!-- <div class="mobile-nav d-lg-none dropdown-products-container" *ngIf="mobileMenuOpen"> -->
-<div class="mobile-nav d-lg-none dropdown-products-container" *ngIf="mobileMenuOpen">
-      <a href="#about" [class.active-link]="activeFragment === 'about'" (click)="navigateToSection('about', $event)">About</a>
-    
-    <!-- Mobile Accordion for Products -->
-    <div class="mobile-accordion-item">
-      <button class="mobile-accordion-header w-100 text-start d-flex justify-content-between align-items-center py-2 px-3 border-0 bg-transparent" (click)="toggleProductsDropdown($event)">
-        <span [class.active-link]="productsDropdownOpen">Products</span>
-        <i class="ri-arrow-down-s-line accordion-arrow" [class.rotated]="productsDropdownOpen"></i>
-      </button>
-      
-      <div class="mobile-accordion-body" [class.expanded]="productsDropdownOpen">
-        <div class="d-flex flex-column gap-2 ps-3 py-2">
-          <a *ngFor="let p of dropdownProducts" 
-             [routerLink]="['/product']" 
-             [queryParams]="{ tab: p.tabIndex }" 
-             (click)="closeMobileMenu()" 
-             class="mobile-product-item d-flex align-items-center p-2 rounded text-decoration-none">
-            <div class="product-dropdown-icon-wrap me-3" [ngClass]="p.bgClass" [style.color]="p.color" style="width: 36px; height: 36px; min-width: 36px; font-size: 18px; border-radius: 8px;">
-              <i [class]="p.icon"></i>
-            </div>
-            <div>
-              <div class="fw-semibold mobile-product-title">{{ p.title }}</div>
-            </div>
-          </a>
-        </div>
+<!--
+  Mobile Navigation Drawer
+  IMPORTANT: this stays in the DOM at all times (no *ngIf) and is
+  shown/hidden purely with the `.show` class below. The CSS
+  `.mobile-nav` starts translated off-screen (translateY(-120%)) and
+  `.mobile-nav.show` slides it in — that's what actually drives the
+  open/close animation.
+
+  FIX: previously this element also had Bootstrap's `d-lg-none`
+  class. That utility sets `display:none !important` from 992px
+  upwards. Our hamburger button is force-shown up to 1200px via a
+  custom media query (see navbar.component.css), so on
+  tablet/small-laptop widths (992px–1200px) the button was visible
+  and clickable, mobileMenuOpen correctly flipped to true, and the
+  `.show` class was correctly applied — but Bootstrap's
+  `display:none !important` from `d-lg-none` still won over the
+  `.show` transform, so the panel never actually rendered.
+  Removing `d-lg-none` here fixes it: visibility of this drawer is
+  now controlled purely by the `.show` class (transform), which is
+  exactly what we want at every breakpoint where the hamburger is
+  visible.
+-->
+<div class="mobile-nav dropdown-products-container" [class.show]="mobileMenuOpen">
+  <a href="#about" [class.active-link]="activeFragment === 'about'"
+    (click)="navigateToSection('about', $event)">About</a>
+
+  <!-- Mobile Accordion for Products -->
+  <div class="mobile-accordion-item">
+    <button
+      class="mobile-accordion-header w-100 text-start d-flex justify-content-between align-items-center py-2 px-3 border-0 bg-transparent"
+      (click)="toggleProductsDropdown($event)">
+      <span [class.active-link]="productsDropdownOpen">Products</span>
+      <i class="ri-arrow-down-s-line accordion-arrow" [class.rotated]="productsDropdownOpen"></i>
+    </button>
+
+    <div class="mobile-accordion-body" [class.expanded]="productsDropdownOpen">
+      <div class="d-flex flex-column gap-2 ps-3 py-2">
+        <a *ngFor="let p of dropdownProducts" [routerLink]="['/product']" [queryParams]="{ tab: p.tabIndex }"
+          (click)="closeMobileMenu()"
+          class="mobile-product-item d-flex align-items-center p-2 rounded text-decoration-none">
+          <div class="product-dropdown-icon-wrap me-3" [ngClass]="p.bgClass" [style.color]="p.color"
+            style="width: 36px; height: 36px; min-width: 36px; font-size: 18px; border-radius: 8px;">
+            <i [class]="p.icon"></i>
+          </div>
+          <div>
+            <div class="fw-semibold mobile-product-title">{{ p.title }}</div>
+          </div>
+        </a>
       </div>
     </div>
-
-    <!-- Mobile Accordion for Services -->
-    <div class="mobile-accordion-item">
-      <button
-        class="mobile-accordion-header w-100 text-start d-flex justify-content-between align-items-center py-2 px-3 border-0 bg-transparent"
-        (click)="toggleServicesDropdown($event)" [class.active-link]="servicesDropdownOpen">
-
-        <span>Services</span>
-
-        <i class="ri-arrow-down-s-line accordion-arrow" [class.rotated]="servicesDropdownOpen">
-        </i>
-
-      </button>
-
-      <div class="mobile-accordion-body" [class.expanded]="servicesDropdownOpen">
-        <div class="d-flex flex-column gap-2 ps-3 py-2">
-          <a *ngFor="let s of dropdownServices" routerLink="/services"
-            (click)="closeMobileMenu()"
-            class="mobile-product-item d-flex align-items-center p-2 rounded text-decoration-none">
-            <div class="product-dropdown-icon-wrap me-3" [ngClass]="s.bgClass" [style.color]="s.color"
-              style="width: 36px; height: 36px; min-width: 36px; font-size: 18px; border-radius: 8px;">
-              <i [class]="s.icon"></i>
-            </div>
-            <div>
-              <div class="fw-semibold mobile-product-title">{{ s.title }}</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <a href="#industries" [class.active-link]="activeFragment === 'industries'" (click)="navigateToSection('industries', $event)">Industries</a>
-    <a href="#customers" [class.active-link]="activeFragment === 'customers'" (click)="navigateToSection('customers', $event)">Customers</a>
-    <a routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact</a>
   </div>
+
+  <!-- Mobile Accordion for Services -->
+  <div class="mobile-accordion-item">
+    <button
+      class="mobile-accordion-header w-100 text-start d-flex justify-content-between align-items-center py-2 px-3 border-0 bg-transparent"
+      (click)="toggleServicesDropdown($event)" [class.active-link]="servicesDropdownOpen">
+
+      <span>Services</span>
+
+      <i class="ri-arrow-down-s-line accordion-arrow" [class.rotated]="servicesDropdownOpen">
+      </i>
+
+    </button>
+
+    <div class="mobile-accordion-body" [class.expanded]="servicesDropdownOpen">
+      <div class="d-flex flex-column gap-2 ps-3 py-2">
+        <a *ngFor="let s of dropdownServices" routerLink="/services" (click)="closeMobileMenu()"
+          class="mobile-product-item d-flex align-items-center p-2 rounded text-decoration-none">
+          <div class="product-dropdown-icon-wrap me-3" [ngClass]="s.bgClass" [style.color]="s.color"
+            style="width: 36px; height: 36px; min-width: 36px; font-size: 18px; border-radius: 8px;">
+            <i [class]="s.icon"></i>
+          </div>
+          <div>
+            <div class="fw-semibold mobile-product-title">{{ s.title }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#industries" [class.active-link]="activeFragment === 'industries'"
+    (click)="navigateToSection('industries', $event)">Industries</a>
+  <a href="#customers" [class.active-link]="activeFragment === 'customers'"
+    (click)="navigateToSection('customers', $event)">Customers</a>
+  <a routerLink="/contact" routerLinkActive="active-link" (click)="closeMobileMenu()">Contact</a>
+
+  <!-- Mobile Accordion for Download -->
+  <div class="mobile-accordion-item">
+    <button
+      class="mobile-accordion-header w-100 text-start d-flex justify-content-between align-items-center py-2 px-3 border-0 bg-transparent"
+      (click)="toggleDownloadDropdown($event)" [class.active-link]="downloadDropdownOpen">
+
+      <span class="d-flex align-items-center gap-2">
+        <i class="ri-download-cloud-2-line"></i>
+        Download
+      </span>
+
+      <i class="ri-arrow-down-s-line accordion-arrow" [class.rotated]="downloadDropdownOpen"></i>
+
+    </button>
+
+    <div class="mobile-accordion-body" [class.expanded]="downloadDropdownOpen">
+      <div class="d-flex flex-column gap-2 ps-3 py-2">
+        <a *ngFor="let d of downloads" href="javascript:void(0)" (click)="downloadFile(d)"
+          class="mobile-download-item d-flex align-items-center p-2 rounded text-decoration-none">
+          <i [class]="d.icon" [style.color]="d.color" class="me-3 mobile-download-icon"></i>
+          <span class="fw-semibold">{{ d.name }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
