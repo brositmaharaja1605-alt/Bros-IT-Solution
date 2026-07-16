@@ -262,6 +262,66 @@
 }
 
 /* ==========================================================
+   FORCE HAMBURGER BEFORE OVERFLOW (fixes cut-off Download button
+   on tablets / small laptops)
+
+   Bootstrap's d-none/d-lg-flex utilities switch at their own `lg`
+   breakpoint (992px) using !important, which was fighting the
+   media queries below and made the full desktop nav (About,
+   Products, Services, Industries, Customers, Tech, Contact,
+   Download) stay visible all the way up to 1200px — too many items
+   for that width, so Download got pushed off-screen on tablets
+   (e.g. 1024px). This block forces the switch to the hamburger
+   menu earlier, overriding Bootstrap's utility classes.
+========================================================== */
+
+@media(max-width:1200px){
+
+.navbar-custom .nav-links{
+
+    display:none !important;
+
+}
+
+.navbar-custom .menu-btn{
+
+    display:flex !important;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+}
+
+/* ==========================================================
+   SAFEGUARD: keep the mobile drawer fully out of the way on
+   wide desktop.
+
+   `d-lg-none` was removed from the `.mobile-nav` element in the
+   HTML (it was fighting with our `.show` class — Bootstrap's
+   `display:none !important` from `d-lg-none` was winning over the
+   `.show` transform on tablet/small-laptop widths, 992px-1200px,
+   which is why the hamburger appeared but the panel never opened).
+
+   Since `.mobile-nav` no longer has that Bootstrap class, this
+   rule makes sure it's fully hidden (not just transformed
+   off-screen) above 1200px, matching the width where the desktop
+   nav-links / hamburger switch happens above.
+========================================================== */
+
+@media(min-width:1201px){
+
+.mobile-nav{
+
+    display:none !important;
+
+}
+
+}
+
+/* ==========================================================
    TABLET
 ========================================================== */
 
@@ -332,7 +392,13 @@
 }
 
 
+.dropdown-services-container .mega-menu{
+    min-width: 850px;
+}
 
+.dropdown-services-container .product-dropdown-card{
+    min-height: 95px;
+}
 /* ==========================================================
    MOBILE
 ========================================================== */
@@ -481,22 +547,16 @@
 
 /* ==========================================================
    MOBILE MENU
-========================================================== */
 
-/* .mobile-nav{
-    position:fixed;
-    top:64px;
-    right:0;
-    width:75%;
-    background:#ffffff;
-    display:flex;
-    flex-direction:column;
-    padding:18px;
-    transform:translateY(-120%); 
-    transition:.35s;
-    z-index:9998;
-    border-radius: 9px;
-} */
+   `.mobile-nav` stays permanently in the DOM (see html — no more
+   *ngIf) and is purely driven by the `.show` class. Default state
+   is translated off-screen; `.show` slides it in. This is what
+   actually needs to toggle for the hamburger to work.
+
+   NOTE: `d-lg-none` is no longer on this element in the HTML (see
+   the "SAFEGUARD" rule above for why) — visibility above 1200px is
+   now handled purely by CSS here instead of Bootstrap utilities.
+========================================================== */
 
 .mobile-nav{
     position: fixed;
@@ -714,5 +774,77 @@ html[data-theme="dark"] .mobile-nav a:hover{
         background:rgba(255,255,255,.18);
         border-radius:10px;
     }
+
+}
+
+.download-dropdown{
+
+    position:absolute;
+
+    top:110%;
+
+    right:0;
+
+    width:260px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    z-index:999;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    animation:dropdown .25s ease;
+}
+
+.download-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    text-decoration:none;
+
+    color:#222;
+
+    transition:.3s;
+}
+
+.download-item:hover{
+
+    background:#f7f7f7;
+
+    transform:translateX(5px);
+}
+
+.download-item i{
+
+    font-size:24px;
+}
+
+@keyframes dropdown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }

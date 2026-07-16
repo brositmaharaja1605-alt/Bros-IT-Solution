@@ -1,0 +1,215 @@
+<section class="tech-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="badge bg-primary px-3 py-2 rounded-pill">
+
+                TECHNOLOGY STACK
+
+            </span>
+
+            <h2 class="fw-bold mt-3">
+
+                Technologies We Use
+
+            </h2>
+
+            <p class="text-muted">
+
+                Modern technologies for scalable, secure and high-performance applications.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div
+                class="col-lg-3 col-md-4 col-sm-6"
+                *ngFor="let tech of technologies">
+
+                <div class="tech-card h-100">
+
+                    <div
+                        class="tech-icon"
+
+                        [style.background]="tech.color">
+
+                        <i [class]="tech.icon"></i>
+
+                    </div>
+
+                    <h5 class="mt-4 fw-bold">
+
+                        {{tech.name}}
+
+                    </h5>
+
+                    <div class="progress mt-4">
+
+                        <div
+                            class="progress-bar"
+
+                            [style.width.%]="tech.percentage"
+
+                            [style.background]="tech.color">
+
+                        </div>
+
+                    </div>
+
+                    <small class="fw-semibold text-muted">
+
+                        {{tech.percentage}}%
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TECHNOLOGY INFO ================= -->
+
+<div class="row justify-content-center mt-5">
+
+    <div class="col-xl-10">
+
+        <div class="tech-info-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <span class="small-title">
+                        OUR DEVELOPMENT STACK
+                    </span>
+
+                    <h3 class="fw-bold mt-2 mb-3">
+
+                        Building Modern, Secure &
+                        <span class="text-primary">
+                            Scalable Applications
+                        </span>
+
+                    </h3>
+
+                    <p class="text-muted mb-4">
+
+                        At <strong>Bros IT Solutions</strong>, we leverage modern
+                        technologies and industry best practices to build
+                        high-performance software solutions. Our experienced
+                        development team specializes in creating enterprise
+                        applications, responsive websites, cross-platform mobile
+                        applications, cloud-based solutions and business
+                        automation systems that are secure, scalable and easy
+                        to maintain.
+
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <div class="feature-line">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                Enterprise Software Development
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="feature-line">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                Responsive Web Applications
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="feature-line">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                Mobile App Development
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="feature-line">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                REST API Integration
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="feature-line">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                Cloud Deployment (AWS)
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="feature-line">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                SQL Server Database Design
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="tech-highlight">
+
+                        <div class="highlight-item">
+
+                            <h2 class="text-light" >10+</h2>
+
+                            <span>Core Technologies</span>
+
+                        </div>
+
+                        <div class="highlight-item">
+
+                            <h2 class="text-light">100%</h2>
+
+                            <span>Latest Frameworks</span>
+
+                        </div>
+
+                        <div class="highlight-item">
+
+                            <h2 class="text-light">24/7</h2>
+
+                            <span>Technical Support</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
