@@ -1,0 +1,685 @@
+/*==================================================
+CUSTOMERS SECTION
+==================================================*/
+
+.customers-section{
+    position:relative;
+    overflow:hidden;
+    padding:100px 0;
+    background:linear-gradient(180deg,#ffffff,#f8fafc,#ffffff);
+}
+
+/*==============================
+Background Animation
+==============================*/
+
+.bg-circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.45;
+    animation:floatBlob 12s infinite alternate;
+    z-index:0;
+}
+
+.bg-circle-1{
+    width:380px;
+    height:380px;
+    background:#ff4d6d40;
+    top:-120px;
+    left:-120px;
+}
+
+.bg-circle-2{
+    width:320px;
+    height:320px;
+    background:#2563eb33;
+    right:-120px;
+    bottom:-100px;
+    animation-delay:2s;
+}
+
+@keyframes floatBlob{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(70px,60px);
+}
+
+}
+
+/*==============================
+Heading
+==============================*/
+
+.section-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:10px 24px;
+
+border-radius:40px;
+
+background:#ffe5e7;
+
+color:#e31e24;
+
+font-size:14px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+animation:badgeFloat 2s infinite ease-in-out;
+
+}
+
+@keyframes badgeFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+.section-title{
+
+font-size:clamp(2.4rem,5vw,4.6rem);
+
+font-weight:800;
+
+color:#0f172a;
+
+margin-bottom:20px;
+
+line-height:1.15;
+
+}
+
+.section-subtitle{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#64748b;
+
+max-width:760px;
+
+margin:auto;
+
+}
+
+/*==============================
+Swiper
+==============================*/
+
+.customerSwiper{
+
+padding:30px 10px 80px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*==================================================
+REVIEW CARD
+==================================================*/
+
+.review-card{
+
+background:rgba(255,255,255,.78);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.45);
+
+border-radius:24px;
+
+padding:30px;
+
+height:100%;
+
+position:relative;
+
+overflow:hidden;
+
+transition:all .45s ease;
+
+box-shadow:0 15px 40px rgba(15,23,42,.08);
+
+}
+
+/* Shine Animation */
+
+.review-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-130%;
+
+width:50%;
+
+height:100%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.75),
+
+transparent
+
+);
+
+transition:1s;
+
+}
+
+.review-card:hover::before{
+
+left:150%;
+
+}
+
+/* Hover */
+
+.review-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 25px 55px rgba(227,30,36,.15);
+
+border-color:#ffd4d7;
+
+}
+
+
+/*==================================================
+HEADER
+==================================================*/
+
+.review-header{
+
+display:flex;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.review-header h5{
+
+margin:0;
+
+font-size:20px;
+
+font-weight:700;
+
+color:#0f172a;
+
+}
+
+.review-header small{
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+
+/*==================================================
+AVATAR
+==================================================*/
+
+.avatar{
+
+width:72px;
+height:72px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:4px solid white;
+
+box-shadow:0 10px 20px rgba(0,0,0,.12);
+
+}
+
+
+.review-card:hover .avatar{
+
+transform:scale(1.12) rotate(5deg);
+
+border-color:#e31e24;
+
+box-shadow:
+0 0 0 8px rgba(227,30,36,.12),
+0 18px 35px rgba(227,30,36,.25);
+
+}
+
+/*==================================================
+GOOGLE LOGO
+==================================================*/
+
+.google-logo{
+
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+
+}
+
+.review-card:hover .google-logo{
+
+transform:scale(1.15);
+
+}
+
+
+/*==================================================
+STARS
+==================================================*/
+
+.stars{
+
+margin:18px 0;
+
+font-size:22px;
+
+letter-spacing:3px;
+
+color:#f59e0b;
+
+animation:starGlow 2s infinite alternate;
+
+}
+
+@keyframes starGlow{
+
+0%{
+
+text-shadow:0 0 0 rgba(245,158,11,.2);
+
+}
+
+100%{
+
+text-shadow:0 0 18px rgba(245,158,11,.55);
+
+}
+
+}
+
+
+/*==================================================
+TEXT
+==================================================*/
+
+.review-text{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#475569;
+
+margin-bottom:25px;
+
+font-style:italic;
+
+min-height:120px;
+
+}
+
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.review-footer{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:auto;
+
+padding-top:20px;
+
+border-top:1px solid #edf2f7;
+
+}
+
+.review-footer span{
+
+font-size:14px;
+
+font-weight:600;
+
+color:#16a34a;
+
+}
+
+.review-footer a{
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#e31e24;
+
+transition:.35s;
+
+}
+
+.review-footer a:hover{
+
+letter-spacing:1px;
+
+}
+
+/*==================================================
+SWIPER NAVIGATION
+==================================================*/
+
+.customerSwiper{
+
+overflow:visible;
+
+}
+
+.customerSwiper::part(button-prev),
+.customerSwiper::part(button-next){
+
+width:52px;
+
+height:52px;
+
+background:#ffffff;
+
+border-radius:50%;
+
+border:1px solid #e5e7eb;
+
+color:#0f172a;
+
+box-shadow:0 8px 20px rgba(15,23,42,.08);
+
+transition:all .35s ease;
+
+}
+
+.customerSwiper::part(button-prev):hover,
+.customerSwiper::part(button-next):hover{
+
+background:#e31e24;
+
+color:#ffffff;
+
+transform:scale(1.08);
+
+box-shadow:0 15px 30px rgba(227,30,36,.30);
+
+}
+
+.customerSwiper::part(button-prev){
+
+left:-10px;
+
+}
+
+.customerSwiper::part(button-next){
+
+right:-10px;
+
+}
+
+/*==================================================
+PAGINATION
+==================================================*/
+
+.customerSwiper::part(pagination){
+
+bottom:5px;
+
+}
+
+.customerSwiper::part(bullet){
+
+width:12px;
+
+height:12px;
+
+background:#cbd5e1;
+
+opacity:1;
+
+margin:0 6px;
+
+transition:.35s;
+
+border-radius:20px;
+
+}
+
+.customerSwiper::part(bullet-active){
+
+width:34px;
+
+background:#e31e24;
+
+}
+
+/*==================================================
+CARD ANIMATION
+==================================================*/
+
+swiper-slide{
+
+height:auto;
+
+transition:.4s ease;
+
+}
+
+swiper-slide:hover{
+
+transform:translateY(-6px);
+
+}
+
+/*==================================================
+GRAB CURSOR
+==================================================*/
+
+.customerSwiper{
+
+cursor:grab;
+
+}
+
+.customerSwiper:active{
+
+cursor:grabbing;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:1200px){
+
+.review-card{
+
+padding:26px;
+
+}
+
+.section-title{
+
+font-size:58px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.customers-section{
+
+padding:80px 0;
+
+}
+
+.section-title{
+
+font-size:48px;
+
+}
+
+.review-text{
+
+min-height:auto;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.customerSwiper{
+
+padding-bottom:70px;
+
+}
+
+.section-title{
+
+font-size:38px;
+
+}
+
+.section-subtitle{
+
+font-size:16px;
+
+}
+
+.review-card{
+
+padding:22px;
+
+border-radius:20px;
+
+}
+
+.avatar{
+
+width:60px;
+
+height:60px;
+
+}
+
+.review-header h5{
+
+font-size:18px;
+
+}
+
+.review-text{
+
+font-size:15px;
+
+}
+
+.customerSwiper::part(button-prev),
+
+.customerSwiper::part(button-next){
+
+display:none;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.customers-section{
+
+padding:60px 0;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+}
+
+.review-card{
+
+padding:20px;
+
+}
+
+.review-footer{
+
+flex-direction:column;
+
+gap:10px;
+
+align-items:flex-start;
+
+}
+
+.review-text{
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+.stars{
+
+font-size:18px;
+
+}
+
+}

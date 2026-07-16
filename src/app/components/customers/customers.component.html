@@ -1,28 +1,108 @@
-
 <app-navbar></app-navbar>
 
+<section class="customers-section py-5 position-relative" id="customers">
 
-<section class="section" id="customers" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <span class="eyebrow">Customers</span>
-      <h2 class="section-title">Loved by retailers across India</h2>
-    </div>
-    <div class="d-flex align-items-center justify-content-center gap-4" data-aos="fade-up">
-      <button class="testi-nav-btn d-none d-md-flex" aria-label="Previous testimonial" (click)="prevTesti()"><i data-lucide="chevron-left"></i></button>
-      <div style="flex:1;max-width:760px;">
-        <div class="testi-card">
-          <img [src]="currentTesti.img" [alt]="currentTesti.name + ' avatar'" class="testi-avatar">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"{{ currentTesti.text }}"</p>
-          <div style="font-weight:700;">{{ currentTesti.name }}</div>
-          <div style="font-size:.85rem;color:var(--text-3);">{{ currentTesti.role }}</div>
-        </div>
+  <!-- Animated Background -->
+  <div class="bg-circle bg-circle-1"></div>
+  <div class="bg-circle bg-circle-2"></div>
+
+  <div class="container position-relative">
+
+    <!-- Heading -->
+    <div class="row justify-content-center mb-5">
+
+      <div class="col-lg-8 text-center">
+
+        <span class="section-badge" data-aos="fade-down">
+          CUSTOMERS
+        </span>
+
+        <h2 class="section-title mt-3" data-aos="fade-up">
+          Loved by Businesses Across India
+        </h2>
+
+        <p class="section-subtitle" data-aos="fade-up">
+          Thousands of retailers trust Bros IT Solutions every day to simplify
+          billing, inventory, GST and business management.
+        </p>
+
       </div>
-      <button class="testi-nav-btn d-none d-md-flex" aria-label="Next testimonial" (click)="nextTesti()"><i data-lucide="chevron-right"></i></button>
+
     </div>
-    <div class="testi-dots">
-      <button *ngFor="let t of testimonials; let i = index" [class.active]="i === testiIndex" [attr.aria-label]="'Go to testimonial ' + (i + 1)" (click)="goToTesti(i)"></button>
-    </div>
+
+    <!-- Swiper -->
+    <swiper-container
+     class="customerSwiper"
+  slides-per-view="3"
+  space-between="30"
+  loop="true"
+  navigation="true"
+  pagination="true"
+  grab-cursor="true"
+  autoplay-delay="2000"
+  autoplay-disable-on-interaction="false"
+  pause-on-mouse-enter="true"
+  speed="500">
+
+      <swiper-slide *ngFor="let t of testimonials">
+
+        <div class="review-card">
+
+          <!-- Quote -->
+          <div class="quote-icon">❝</div>
+
+          <!-- Header -->
+          <div class="review-header">
+
+            <a href="javascript:void(0)" class="avatar-link">
+
+              <img
+                [src]="t.img"
+                [alt]="t.name"
+                class="avatar">
+
+            </a>
+
+            <div class="ms-3 flex-grow-1">
+
+              <h5>{{ t.name }}</h5>
+
+              <small>{{ t.role }}</small>
+
+            </div>
+
+            <img
+              src="assets/img/google.png"
+              alt="Google Review"
+              class="google-logo">
+
+          </div>
+
+          <!-- Rating -->
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <!-- Review -->
+          <p class="review-text">
+            "{{ t.text }}"
+          </p>
+
+          <!-- Footer -->
+          <div class="review-footer">
+
+            <span class="verified">
+              ✔ Verified Customer
+            </span>
+
+          </div>
+
+        </div>
+
+      </swiper-slide>
+
+    </swiper-container>
+
   </div>
+
 </section>
